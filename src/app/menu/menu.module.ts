@@ -12,12 +12,13 @@ import { RouterLink } from '@angular/router';
 import { ReportePDFComponent } from './reporte/reporte-pdf/reporte-pdf.component';
 import { ReporteExcelComponent } from './reporte/reporte-excel/reporte-excel.component';
 import { MenuComponent } from './menu.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 
 @NgModule({
   declarations: [
-    MenuComponent,
     SolicitudComponent, 
     AsignacionComponent, 
     AprobacionComponent, 
@@ -38,12 +39,13 @@ import { MenuComponent } from './menu.component';
     BitacoraComponent, 
     PerfilComponent, 
     ReportePDFComponent, 
-    ReporteExcelComponent,
-    MenuComponent
+    ReporteExcelComponent
   ],
   imports: [
     CommonModule,
-    RouterLink
+    RouterLink,
+    HttpClientModule,
+    FormsModule,
   ]
 })
 export class MenuModule { }
