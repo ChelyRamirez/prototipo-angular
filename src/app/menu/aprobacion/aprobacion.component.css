@@ -1,0 +1,81 @@
+.header{
+    background: #23283D;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.but{
+    float: right;
+    padding: 0.5%;
+    border-color: #23283D;
+}
+.title{
+    color: #7E7E7E;
+    font-family: Avenir-Next;
+    text-align: center;
+}
+.form {
+    float: left;
+    font-family: Avenir-Next;
+    position: relative;
+    background: #FFFFFF;
+    width: 40%;
+    margin: 1%;
+    padding: 1%;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 5px;
+    color: #7E7E7E;
+}
+.forma {
+    float: right;
+    align-content: center;
+    font-family: Avenir-Next;
+    position: relative;
+    background: #FFFFFF;
+    width: 51%;
+    margin: 1%;
+    padding: 1%;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 5px;
+    color: #7E7E7E;
+}
+.form input {
+    font-family: Avenir-Next;
+    outline: 0;
+    background: #f2f2f2;
+    width: 500px;
+    border: 0;
+    margin: 0 0 3%;
+    padding: 2%;
+    box-sizing: border-box;
+    font-size: 100%;
+    border-radius: 5px;
+}
+.form select {
+    font-family: Avenir-Next;
+    outline: 0;
+    background: #f2f2f2;
+    width: 500px;
+    border: 0;
+    margin: 0 0 3%;
+    padding: 2%;
+    box-sizing: border-box;
+    font-size: 100%;
+    border-radius: 5px;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    margin: 0 auto;
+    columns: 2;
+}
+body{
+    background-color: #fff;
+    color: #7E7E7E;
+    font-family: Avenir-Next;
+}
+@font-face {
+    font-family: Avenir-Next;
+    src: url('../../../assets/fonts/AvenirNextLTPro-Regular.otf');
+  }

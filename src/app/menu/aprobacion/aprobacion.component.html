@@ -1,0 +1,56 @@
+
+<header>
+    <div class="header">
+        <img src="../../../assets/img/icono2.png">
+        <div class="but">
+            <form action="menu">
+                <a href="/menu"><img src="../../../assets/img/menu.png"/></a>
+            </form>
+        </div>
+    </div>
+</header>
+<h3 class="title">APROBACIÓN DE CRÉDITO</h3>
+<body>
+    <div container>
+        <div class="logo-image"></div>
+        <div class="form">
+            <form action="aprobacion-form.html">
+                <fieldset>
+                    <input type="text" name="nombre" class="form-input" placeholder="Nombre completo"/>
+                    <br><input type="text" name="domiclio" class="form-input" placeholder="Domicilio"/>
+                    <br><input type="text" name="visitador" class="form-input" placeholder="Nombre del visiador"/>
+                    <br><input type="date" name="fecha" class="form-input" placeholder="Fecha"/>
+                    <br><input type="time" name="hora" class="form-input" placeholder="Hora"/>
+                    <br><input type="text" name="latitud" class="form-input" placeholder="Latidud"/>
+                    <br><input type="text" name="longitud" class="form-input" placeholder="Longitud"/>
+                    
+                    <br><br><label for="credito">¿Se le otorgará el crédito?</label>
+                    <input type="radio" name="credito" value="Si" style="width: 50px;">Si
+                    <input type="radio" name="credito" value="No" style="width: 50px;">No
+                    <br><br><select name="status" id="status">
+                        <option value="activo">Activo</option>
+                        <option value="inactivo">Inactivo</option>
+                    </select>
+                </fieldset>
+            </form>
+        </div>
+        <div class="forma">
+            <form action="foto-form">
+                    
+                        <div class="casa">
+                            <label for="casa">Fotografía de la casa:</label>
+                            <textarea name="casa" rows="14" cols="93"></textarea>
+                        </div>
+                        <br>
+                        <div class="razon">
+                            <label for="razon">Motivo:</label>
+                            <textarea name="razon" rows="14" cols="93"></textarea>
+                        </div>
+                        <input type="button" style="font-family: Avenir-Next; background-color: #23283D; color: #fff; width: 200px; height: 30px; border-radius: 5px;" value="GUARDAR" name="guardar" OnClick="location.href='menu.html' ">
+                    
+                
+            </form>
+        </div>
+      </div>
+    
+</body>

@@ -1,0 +1,42 @@
+.header{
+    background: #23283D;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.but{
+    float: right;
+    padding: 0.5%;
+    background-repeat: no-repeat;
+}
+#tabla1 {
+    float: left;
+    width: 50%;
+    font-family: Avenir-Next;
+    font-size: 100%;
+    text-align: left;
+    width: 100%; 
+}
+.title{
+    color: #7E7E7E;
+    font-family: Avenir-Next;
+    text-align: center;
+}
+#tabla1 table {
+    text-align: center;
+}
+h2 {
+    color: #7E7E7E;
+    font-family: Avenir-Next;
+}
+#tabla1 table tr td {
+    width: 1000px
+}
+table tr:nth-child(odd) {background-color: #E5E5E5;
+    padding: 8%;
+    border-bottom: 1px solid #fff;
+    color: #7E7E7E;    
+    border-top: 1px solid transparent; 
+}
+@font-face {
+    font-family: Avenir-Next;
+    src: url('../../../assets/fonts/AvenirNextLTPro-Regular.otf');
+}
