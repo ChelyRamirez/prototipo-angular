@@ -9,12 +9,7 @@ import { Bitacora } from '../../models/bitacora';
 })
 export class BitacoraComponent implements OnInit {
   
-  bit: Bitacora = {
-    fecha: '',
-    modulo: 'Login',
-    accion: 'Inicio Sesion',
-    idEmpleado: 0
-  }
+  bit: any = [];
   
   constructor(
     private bitacora: GlobalService
@@ -27,6 +22,7 @@ export class BitacoraComponent implements OnInit {
   verBitacora(){
     return this.bitacora.verBitacora().subscribe(
       res => {
+        this.bit = res;
         
       },
       err => console.log(err)

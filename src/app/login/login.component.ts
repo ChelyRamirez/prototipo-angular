@@ -44,6 +44,7 @@ export class LoginComponent implements OnInit {
         if( res.idEmpleado !== 0 ){
           this.log.idEmpleado = res.idEmpleado;
           this.bit.idEmpleado = res.idEmpleado;
+          this.log.password = "";
           this.bitacora.registrarBitacora(this.bit).subscribe(
             res => {
               localStorage.setItem('usuario', JSON.stringify(this.log));

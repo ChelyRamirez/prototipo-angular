@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Bitacora } from '../../models/bitacora';
+import { LoginService } from '../../services/login.service';
+import { User } from '../../models/empleado';
+import { GlobalService } from '../../services/global.service';
 
-import { LoginService } from '../services/login.service';
-import { GlobalService } from '../services/global.service';
-import { Bitacora } from '../models/bitacora';
-import { User } from '../models/empleado';
+
 
 @Component({
   selector: 'app-menu',

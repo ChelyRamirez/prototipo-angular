@@ -6,7 +6,7 @@ import { AprobacionComponent } from './menu/aprobacion/aprobacion.component';
 import { AsignacionComponent } from './menu/asignacion/asignacion.component';
 import { BitacoraComponent } from './menu/bitacora/bitacora.component';
 import { ConsultaComponent } from './menu/consulta/consulta.component';
-import { MenuComponent } from './menu/menu.component';
+import { MenuComponent } from './menu/inicio/menu.component';
 import { PerfilComponent } from './menu/perfil/perfil.component';
 import { DocumentoXLSXComponent } from './menu/reporte/reporte-excel/documento-xlsx/documento-xlsx.component';
 import { ReporteExcelComponent } from './menu/reporte/reporte-excel/reporte-excel.component';

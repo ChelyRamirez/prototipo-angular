@@ -5,17 +5,17 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { MenuComponent } from './menu/menu.component';
 import { CargaComponent } from './carga/carga.component';
 import { DocumentoXLSXComponent } from './menu/reporte/reporte-excel/documento-xlsx/documento-xlsx.component';
 import { DocumentoPDFComponent } from './menu/reporte/reporte-pdf/documento-pdf/documento-pdf.component';
 import { LoginService } from './services/login.service';
 import { GlobalService } from './services/global.service';
 import { CommonModule } from '@angular/common';
+import { MenuModule } from './menu/menu.module';
+import { RouterLink } from '@angular/router';
 
 @NgModule({
   declarations: [
-    MenuComponent,
     AppComponent,
     LoginComponent,
     CargaComponent,
@@ -28,6 +28,8 @@ import { CommonModule } from '@angular/common';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    MenuModule,
+    RouterLink
   ],
   providers: [
     LoginService,
