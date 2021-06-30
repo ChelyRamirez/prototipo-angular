@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { LoginService } from '../services/login.service';
+import { GlobalService } from '../services/global.service';
+import { User } from '../models/empleado';
+import { Bitacora } from '../models/bitacora';
+
 
 @Component({
   selector: 'app-login',
@@ -7,9 +14,47 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  log: User = {
+    username: '',
+    password: '',
+    idEmpleado: 0
+  };
+
+  bit: Bitacora = {
+    modulo: 'Login',
+    accion: 'Inicio Sesion',
+    idEmpleado: 0
+  }
+
+  constructor(
+    private loginService: LoginService,
+    private bitacora: GlobalService,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
+  }
+
+  login() {
+    this.loginService.login(this.log).subscribe(
+      res => {
+        if( !res.ok ){
+          return console.log(res);
+        }
+        if( res.idEmpleado !== 0 ){
+          this.log.idEmpleado = res.idEmpleado;
+          this.bit.idEmpleado = res.idEmpleado;
+          this.bitacora.registrarBitacora(this.bit).subscribe(
+            res => {
+              localStorage.setItem('usuario', JSON.stringify(this.log));
+              return this.router.navigate(['/menu']);
+            },
+            err => console.log(err)
+          )
+        }
+       },
+      err => console.log(err)
+    )
   }
 
 }

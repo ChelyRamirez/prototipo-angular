@@ -12,6 +12,8 @@ import { RouterLink } from '@angular/router';
 import { ReportePDFComponent } from './reporte/reporte-pdf/reporte-pdf.component';
 import { ReporteExcelComponent } from './reporte/reporte-excel/reporte-excel.component';
 import { MenuComponent } from './menu.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -38,10 +40,12 @@ import { MenuComponent } from './menu.component';
     PerfilComponent, 
     ReportePDFComponent, 
     ReporteExcelComponent,
-    MenuComponent
+
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    HttpClientModule,
     RouterLink
   ]
 })
