@@ -6,13 +6,16 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
 import { CargaComponent } from './carga/carga.component';
+import { DocumentoXLSXComponent } from './menu/reporte/reporte-excel/documento-xlsx/documento-xlsx.component';
+import { DocumentoPDFComponent } from './menu/reporte/reporte-pdf/documento-pdf/documento-pdf.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    MenuComponent,
-    CargaComponent
+    CargaComponent,
+    DocumentoXLSXComponent,
+    DocumentoPDFComponent
   ],
   imports: [
     BrowserModule,

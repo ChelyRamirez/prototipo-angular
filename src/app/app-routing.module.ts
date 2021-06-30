@@ -8,7 +8,9 @@ import { BitacoraComponent } from './menu/bitacora/bitacora.component';
 import { ConsultaComponent } from './menu/consulta/consulta.component';
 import { MenuComponent } from './menu/menu.component';
 import { PerfilComponent } from './menu/perfil/perfil.component';
+import { DocumentoXLSXComponent } from './menu/reporte/reporte-excel/documento-xlsx/documento-xlsx.component';
 import { ReporteExcelComponent } from './menu/reporte/reporte-excel/reporte-excel.component';
+import { DocumentoPDFComponent } from './menu/reporte/reporte-pdf/documento-pdf/documento-pdf.component';
 import { ReportePDFComponent } from './menu/reporte/reporte-pdf/reporte-pdf.component';
 import { ReporteComponent } from './menu/reporte/reporte.component';
 import { SolicitudComponent } from './menu/solicitud/solicitud.component';
@@ -28,7 +30,9 @@ const routes: Routes = [
   {path: "reportes", component: ReporteComponent},
   {path: "perfil", component: PerfilComponent},
   {path: "reportePDF", component: ReportePDFComponent},
-  {path: "reporteExcel", component: ReporteExcelComponent}
+  {path: "reporteExcel", component: ReporteExcelComponent},
+  {path: "documentoExcel", component: DocumentoXLSXComponent},
+  {path: "documentoPDF", component: DocumentoPDFComponent}
 ];
 
 @NgModule({

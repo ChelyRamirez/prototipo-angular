@@ -17,7 +17,6 @@ import { MenuComponent } from './menu.component';
 
 @NgModule({
   declarations: [
-    MenuComponent,
     SolicitudComponent, 
     AsignacionComponent, 
     AprobacionComponent, 

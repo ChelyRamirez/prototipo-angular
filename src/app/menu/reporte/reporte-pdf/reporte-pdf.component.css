@@ -13,8 +13,7 @@
 .menu-form {
     position: absolute;
     top: 20%;
-    height: 40%;
-    width: 50%;
+    width: 60%;
     font-family: sans-serif;
     position: relative;
     background: #FFFFFF;
@@ -25,7 +24,49 @@
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     border-radius: 1%;
-    ;
+}
+.header{
+    background: #23283D;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.but{
+    float: right;
+    padding: 0.5%;
+    background-repeat: no-repeat;
+}
+.container{
+    background-image: linear-gradient();
+}
+.menu-form {
+    position: absolute;
+    top: 20%;
+    height: 35%;
+    font-family: sans-serif;
+    position: relative;
+    background: #FFFFFF;
+    max-width: 200px;
+    margin: 0 auto 100px;
+    padding: 50px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 1%;
+}
+h1{
+    font-family: Avenir-Next;
+    font-size: 110%;
+}
+H2{
+    font-family: Avenir-Next;
+    font-size: 80%;
+}
+.boton input{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #23283D;
+    color: #FFFFFF;
+    border-radius: 1vh;
+    width: 30vh;
+    height: 5vh;
+    border: 0ch;
 }
 body{
     position: relative;
@@ -34,3 +75,7 @@ body{
     height: 91.4vh;
     align-items: center;
 }
+@font-face {
+    font-family: Avenir-Next;
+    src: url('../../../../assets/fonts/AvenirNextLTPro-Regular.otf');
+  }

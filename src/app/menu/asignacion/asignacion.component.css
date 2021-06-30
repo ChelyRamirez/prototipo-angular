@@ -10,25 +10,42 @@
 body{
     background-color: #FFF;
 }
-
 #contenedor {
     float: left;
-    width: 100%;
+    font-family: Avenir-Next;
+    background: #FFFFFF;
+    width: 52%;
+    margin: 1%;
+    padding: 1%;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 5px;
+    color: #7E7E7E;
 }
-
 #contenedor2 {
     float: right;
     width: 40%;
 }
-
+.forma {
+    float: right;
+    align-content: center;
+    font-family: Avenir-Next;
+    position: relative;
+    background: #FFFFFF;
+    width: 40%;
+    margin: 1%;
+    padding: 1%;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 5px;
+    color: #7E7E7E;
+}
 #tabla1 {
     float: left;
-    width: 50%;
+    width: 100%;
     font-family: Avenir-Next;
     font-size: 100%;
     text-align: left;
-    overflow:scroll;
-    height:450px; 
+    overflow-y:scroll;
+    height:70vh; 
 }
 .title{
     color: #7E7E7E;
@@ -40,25 +57,47 @@ body{
 }
 
 #tabla1 table tr td {
-    width: 300px
+    height: 6vh;
+    width: 50vh;
 }
-
+#tabla1 table tr th{
+    background-color: #FFF; 
+    color: #7e7e7e; 
+    border: solid 0.5px #7E7E7E; 
+    border-radius: 1vh;
+    font-family: Avenir-Next;
+    height: 6vh;
+}
 #tabla2 {
     float: left;
     width: 100%;
     font-family: Avenir-Next;
     font-size: 100%;
     text-align: left;
-    overflow:scroll;
-    height:450px;     
+    overflow-y:scroll;
+    height:70vh;     
 }
-
 #tabla2 table {
     text-align: center;
 }
-
 #tabla2 table tr td {
-    width: 300px
+    height: 6vh;
+    width: 50vh;
+}
+#tabla2 table tr th{
+    background-color: #23283D; 
+    color: #fff; 
+    border: solid 0.5px #23283D; 
+    border-radius: 1vh;
+    font-family: Avenir-Next;
+    height: 6vh;
+}
+.button{
+    background-color: #23283D; 
+    color: #FFF; 
+    border-radius: 5px; 
+    width: 150px; 
+    height: 30px;
 }
 tr:hover td { 
     background: #3d3d3d; 

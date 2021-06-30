@@ -6,7 +6,7 @@
 .title1{
     color: #7E7E7E;
     font-family: Avenir-Next;
-    text-align: left;
+    text-align: center;
 }
 .header{
     background: #23283D;
@@ -25,9 +25,10 @@
 .user-form {
     font-family: Avenir-Next;
     background: #FFFFFF;
-    width: 50%;
+    width: 80%;
+    height: 65vh;
     margin: 0 auto 0px;
-    padding: 2%;
+    padding: 1%;
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     border-radius: 1%;
@@ -35,36 +36,75 @@
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
 }  
 .form {
-    position: relative;
-    width: 100%;
-    margin: 0%;
-    padding: 0%;
-    text-align: center;
-    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2), 0 5% 5% 0 rgba(0, 0, 0, 0.24);
-    border-radius: 5px;
-    color: #7E7E7E;
-    align-content: center;
-  }
-h2{
+  float: left;
   font-family: Avenir-Next;
+  background: #FFFFFF;
+  width: 50%;
+  margin: 0%;
+  padding: 0%;
   color: #7E7E7E;
-  font-style: light;
 }
-h4{
-  margin-left: 280px;
+.forma {
+  float: right;
+  align-content: left;
+  position: relative;
+  background: #FFFFFF;
+  width: 51%;
+  margin: 1%;
+  padding: 1%;
+  text-align: right;
 }
 .form input {
   font-family: Avenir-Next;
   outline: 0;
   background: #f2f2f2;
-  width: 100%;
+  height: 10%;
   border: 0;
   margin: 0 0 5%;
-  padding: 2%;
+  padding: 1%;
   box-sizing: border-box;
   font-size: 100%;
   border-radius: 8px;
-  width: 90%;
+  width: 70%;
+}
+.botonAzul{
+  padding-left: 700px;
+  width: 100px;
+}
+.botonAzul input{
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #23283D;
+  color: #FFFFFF;
+  border-radius: 1vh;
+  width: 40vh;
+  height: 5vh;
+  border: 0ch;
+}
+.botonGris{
+  padding-left: 700px;
+  width: 100px;
+}
+.botonGris input{
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #7E7E7E;
+  color: #FFFFFF;
+  border-radius: 1vh;
+  width: 40vh;
+  height: 5vh;
+  border: 0ch;
+}
+.botonVerde{
+  padding-left: 180px;
+  width: 100px;
+}
+.botonVerde input{
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #1e5e36;
+  color: #FFFFFF;
+  border-radius: 1vh;
+  width: 30vh;
+  height: 5vh;
+  border: 0ch;
 }
 @font-face {
   font-family: Avenir-Next;

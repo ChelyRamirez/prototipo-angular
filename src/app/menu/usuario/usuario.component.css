@@ -12,12 +12,16 @@
     font-family: Avenir-Next;
     position: relative;
     background: #FFFFFF;
-    width: 40%;
+    width: 41.5%;
     margin: 1%;
     padding: 1%;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-    border-radius: 5px;
+    border-radius: 1vh;
     color: #7E7E7E;
+
+    font-size: 100%;
+    text-align: left;
+    height:72vh; 
 }
 .forma {
     float: right;
@@ -26,19 +30,19 @@
     position: relative;
     background: #FFFFFF;
     width: 50.3%;
+    height:72vh; 
     margin: 1%;
     padding: 1%;
-    text-align: left;
+    border-radius: 1vh;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-    border-radius: 5px;
     color: #7E7E7E;
 }
 .button{
-    background-color: #23283D; 
+    padding-top: 200%;
     color: #fff; 
-    width: 200px; 
+    width: 20; 
     height: 30px; 
-    border-radius: 5px;
+    border-radius: 2vh;
 }
 .form input {
     font-family: Avenir-Next;
@@ -79,21 +83,35 @@ body{
     color: #7E7E7E;
     font-family: Avenir-Next;
 }
+
+
 #tabla2 {
     float: left;
-    width: 700px;
+    width: 100%;
     font-family: Avenir-Next;
     font-size: 100%;
     text-align: left;
-    height:337px;  
+    overflow-y:scroll;
+    height:70vh; 
 }
-
+#contenedor {
+    float: left;
+    font-family: Avenir-Next;
+    background: #FFFFFF;
+    width: 41%;
+    margin: 1%;
+    padding: 1%;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 5px;
+    color: #7E7E7E;
+}
 #tabla2 table {
     text-align: center;
 }
 
 #tabla2 table tr td {
-    width: 337px
+    width: 337vh;
+    height: 5vh;
 }
 table tr:nth-child(odd) {background-color: #E5E5E5;
     padding: 8%;
