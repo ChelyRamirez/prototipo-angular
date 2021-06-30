@@ -18,6 +18,6 @@ export class LoginService {
   }
 
   logout( logout: User ): Observable<any>{
-    return this.http.post(`${Commons.BASE_URL}logout`, logout.username);
+    return this.http.post(`${Commons.BASE_URL}logout`, logout);
   }
 }

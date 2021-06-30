@@ -84,7 +84,13 @@ body{
     font-family: Avenir-Next;
 }
 
-
+#tabla2::-webkit-scrollbar{
+    width: 1ex;
+}
+#tabla2::-webkit-scrollbar-thumb{
+    background: #23283D;
+    border-radius: 2vh;
+}
 #tabla2 {
     float: left;
     width: 100%;
