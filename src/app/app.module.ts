@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -10,9 +11,7 @@ import { DocumentoXLSXComponent } from './menu/reporte/reporte-excel/documento-x
 import { DocumentoPDFComponent } from './menu/reporte/reporte-pdf/documento-pdf/documento-pdf.component';
 import { LoginService } from './services/login.service';
 import { GlobalService } from './services/global.service';
-import { CommonModule } from '@angular/common';
 import { MenuModule } from './menu/menu.module';
-import { RouterLink } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -29,7 +28,6 @@ import { RouterLink } from '@angular/router';
     HttpClientModule,
     FormsModule,
     MenuModule,
-    RouterLink
   ],
   providers: [
     LoginService,
