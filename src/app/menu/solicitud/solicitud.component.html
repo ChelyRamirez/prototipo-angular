@@ -16,25 +16,30 @@
         <div class="form">
             <form action="solicitud.php" method="POST">
                 <fieldset>
-                    <br><input type="text" name="nombre" class="form-input"  placeholder="Nombre completo" required/>
-                    <br><input type="text" name="telefono" class="form-input"  placeholder="Teléfono" required/> 
-                    <br><input type="text" name="empresa" class="form-input"  placeholder="Empresa" required/>
+                    <br><input style="width: 34.5%;" type="text" name="nombre" class="form-input"  placeholder="Nombre(s)" required/>&nbsp;
+                    <input style="width: 31%;" type="text" name="apellidoPaterno" class="form-input"  placeholder="Apellido Paterno" required/>&nbsp;
+                    <input style="width: 31%;" type="text" name="apellidoMaterno" class="form-input"  placeholder="Apellido Materno" required/>
+                    <input style="width: 49%;" type="text" name="telefono" class="form-input"  placeholder="Teléfono" required/>&nbsp;
+                    <input style="width: 49%;" type="text" name="empresa" class="form-input"  placeholder="Empresa" required/>
                     <br><input style="width: 49%;" type="text" name="sueldo" class="form-input"  placeholder="Sueldo $" required/>&nbsp;
                     <input style="width: 49%;" type="text" name="monto" class="form-input"  placeholder="Monto a pagar $" required/>
                     <br><input type="text" name="anti" class="form-input"  placeholder="Antigüedad en la empresa" required/>
                     <br><input type="text" name="domicilio" class="form-input"  placeholder="Domicilio" required/>
                     <br><input style="width: 49%;" type="text" name="latitud" class="form-input"  placeholder="Latidud" required/>&nbsp;
                     <input style="width: 49%;" type="text" name="longitud" class="form-input"  placeholder="Longitud" required/>
-                    <input class="form-btn" name="submit" type="submit" value="INGRESAR" style="background-color: #23283D; color: #FFF;">
+                    <input class="form-btn" name="submit" type="submit" value="INGRESAR" style="background-color: #23283D;">
                 </fieldset>
             </form>
         </div>
         <div class="forma">
             <form action="foto-form">
                 <fieldset>
-                    <img src="../../../assets/img/mapa.png" alt="mapa">
+                    <div class="mapa">
+                        <!--Aquí va el mapa-->
+                      </div>
                     <fieldset>
                         <a href="foto-form.html"><img src="../../../assets/img/camara.png"></a>
+                        <img src="../../../assets/img/ine.png" alt="">
                     </fieldset> 
                 </fieldset>
             </form>
