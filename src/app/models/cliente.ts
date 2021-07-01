@@ -1,4 +1,7 @@
 export interface Cliente {
+    idpersona?: number;
+    idcliente?: number;
+    fechavisita?: string;
     nombrePersona: string;
     apPaterno: string;
     apMaterno: string;
@@ -16,5 +19,9 @@ export interface Cliente {
     numExt?: string;
     numInt?: string;
     latitud?: number;
+    latitudReal?: number;
     longitud?: number;
+    longitudReal?: number;
+    firma?: string;
+    comentariovisitante?: string;
 }

@@ -9,16 +9,12 @@ import { Cliente } from '../models/cliente';
 @Injectable({
   providedIn: 'root'
 })
-export class ClienteService {
+export class VisitaService {
 
   constructor(private http: HttpClient) { }
 
-  registrarCliente( cliente: Cliente ): Observable<any> {
-    return this.http.post(`${Commons.BASE_URL}agregarCliente`, cliente);
-  }
-
-  obtenerClientes(): Observable<any> {
-    return this.http.get(`${Commons.BASE_URL}obtenerClientes`,);
+  obtenerVisitasPendientes(): Observable<any> {
+    return this.http.get(`${Commons.BASE_URL}obtenerVisitasPendietes`,);
   }
 
 }
