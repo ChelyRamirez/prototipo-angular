@@ -1,5 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
+<<<<<<< HEAD
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+=======
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+>>>>>>> a1e05cdcffc0dc0be26b78305b1377c6fa06335e
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -10,7 +15,6 @@ import { DocumentoXLSXComponent } from './menu/reporte/reporte-excel/documento-x
 import { DocumentoPDFComponent } from './menu/reporte/reporte-pdf/documento-pdf/documento-pdf.component';
 import { LoginService } from './services/login.service';
 import { GlobalService } from './services/global.service';
-import { CommonModule } from '@angular/common';
 import { MenuModule } from './menu/menu.module';
 import { HereMapsModule } from 'ng2-heremaps';
 
