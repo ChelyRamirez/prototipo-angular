@@ -12,7 +12,6 @@ import { LoginService } from './services/login.service';
 import { GlobalService } from './services/global.service';
 import { CommonModule } from '@angular/common';
 import { MenuModule } from './menu/menu.module';
-import { RouterLink } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -29,7 +28,6 @@ import { RouterLink } from '@angular/router';
     HttpClientModule,
     FormsModule,
     MenuModule,
-    RouterLink
   ],
   providers: [
     LoginService,
