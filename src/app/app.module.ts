@@ -20,7 +20,7 @@ import { HereMapsModule } from 'ng2-heremaps';
     LoginComponent,
     CargaComponent,
     DocumentoXLSXComponent,
-    DocumentoPDFComponent
+    DocumentoPDFComponent,
   ],
   imports: [
     BrowserModule,
