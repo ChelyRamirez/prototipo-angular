@@ -13,6 +13,7 @@ import { ReporteExcelComponent } from './reporte/reporte-excel/reporte-excel.com
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './inicio/menu.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 
@@ -33,6 +34,7 @@ import { MenuComponent } from './inicio/menu.component';
   exports: [],
 
   imports: [
+    BrowserModule,
     CommonModule,
     FormsModule,
     HttpClientModule,
