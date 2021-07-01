@@ -6,7 +6,6 @@ import { AprobacionComponent } from './menu/aprobacion/aprobacion.component';
 import { AsignacionComponent } from './menu/asignacion/asignacion.component';
 import { BitacoraComponent } from './menu/bitacora/bitacora.component';
 import { ConsultaComponent } from './menu/consulta/consulta.component';
-import { MenuComponent } from './menu/inicio/menu.component';
 import { PerfilComponent } from './menu/perfil/perfil.component';
 import { DocumentoXLSXComponent } from './menu/reporte/reporte-excel/documento-xlsx/documento-xlsx.component';
 import { ReporteExcelComponent } from './menu/reporte/reporte-excel/reporte-excel.component';
@@ -15,6 +14,7 @@ import { ReportePDFComponent } from './menu/reporte/reporte-pdf/reporte-pdf.comp
 import { ReporteComponent } from './menu/reporte/reporte.component';
 import { SolicitudComponent } from './menu/solicitud/solicitud.component';
 import { UsuarioComponent } from './menu/usuario/usuario.component';
+import { MenuComponent } from './menu/inicio/menu.component';
 
 const routes: Routes = [
   {path: "", redirectTo: "/home", pathMatch: "full"},
