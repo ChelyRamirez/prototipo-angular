@@ -47,6 +47,20 @@ body{
     overflow-y:scroll;
     height:70vh; 
 }
+#tabla1::-webkit-scrollbar{
+    width:1.3ex;
+}
+#tabla1::-webkit-scrollbar-thumb{
+    background: #23283D;
+    border-radius: 2vh;
+}
+#tabla2::-webkit-scrollbar{
+    width: 1.3ex;
+}
+#tabla2::-webkit-scrollbar-thumb{
+    background: #23283D;
+    border-radius: 2vh;
+}
 .title{
     color: #7E7E7E;
     font-family: Avenir-Next;

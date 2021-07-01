@@ -7,10 +7,20 @@
     padding: 0.5%;
     background-repeat: no-repeat;
 }
-
 .title{
     color: #7E7E7E;
     font-family: Avenir-Next;
+    text-align: center;
+}
+.img{
+    position: absolute;
+    top: 25%;
+    left: 3%;
+    height: 50%;
+    width: 50%;
+    background: #FFFFFF;
+    margin: 0 auto 100px;
+    padding: 2%;
     text-align: center;
 }
 .menu-form {
@@ -29,6 +39,19 @@
     color: #000000;
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
 }
+h1{
+    font-family: Avenir-Next;
+    font-size: 130%;
+}
+.boton input{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #23283D;
+    color: #FFFFFF;
+    border-radius: 1vh;
+    width: 35vh;
+    height: 5vh;
+    border: 0ch;
+}
 body{
     position: relative;
     background-image: linear-gradient(#23283D, transparent), url('../../../assets/img/fondoMR.png');
@@ -36,7 +59,7 @@ body{
     height: 91.4vh;
     align-items: center;
   }
-a{
+.menus a{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-color: #23283D;
 }
