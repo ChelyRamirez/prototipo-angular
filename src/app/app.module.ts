@@ -22,7 +22,7 @@ import { ClienteService } from './services/cliente.service';
     LoginComponent,
     CargaComponent,
     DocumentoXLSXComponent,
-    DocumentoPDFComponent
+    DocumentoPDFComponent,
   ],
   imports: [
     BrowserModule,
