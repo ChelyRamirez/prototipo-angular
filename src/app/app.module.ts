@@ -44,6 +44,7 @@ import { ClienteService } from './services/cliente.service';
     ReporteService,
     ClienteService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule { }
