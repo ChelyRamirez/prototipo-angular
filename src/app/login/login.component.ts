@@ -6,6 +6,7 @@ import { GlobalService } from '../services/global.service';
 import { User } from '../models/empleado';
 import { Bitacora } from '../models/bitacora';
 
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -39,6 +40,11 @@ export class LoginComponent implements OnInit {
     this.loginService.login(this.log).subscribe(
       res => {
         if( !res.ok ){
+          Swal.fire({
+            icon: 'error',
+            title: '¡ERROR!',
+            text: 'Usuario y contraseña invalidos'
+          });
           return console.log(res);
         }
         if( res.idEmpleado !== 0 ){
@@ -50,11 +56,25 @@ export class LoginComponent implements OnInit {
               localStorage.setItem('usuario', JSON.stringify(this.log));
               return this.router.navigate(['/menu']);
             },
-            err => console.log(err)
+            err => {
+              Swal.fire({
+                icon: 'error',
+                title: '¡ERROR!',
+                text: 'Ha ocurrio un error en el servidor'
+              });
+              return console.log(err);
+            }
           )
         }
        },
-      err => console.log(err)
+      err => {
+        Swal.fire({
+          icon: 'error',
+          title: '¡ERROR!',
+          text: 'Ha ocurrio un error en el servidor'
+        });
+        return console.log(err);
+      }
     )
   }
 
