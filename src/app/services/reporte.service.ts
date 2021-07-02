@@ -13,7 +13,10 @@ export class ReporteService {
   constructor(private http: HttpClient) { }
 
   reportePDF(): Observable<any> {
-    return this.http.get(`${Commons.BASE_URL}obtenerReportePDF`);
+    const cabeceras = new HttpHeaders().set('Content-Type', 'application/pdf');
+
+    return this.http.get(`${Commons.BASE_URL}obtenerReportePDF`, {headers: cabeceras});
+    
   }
 
   reporteXLSX(): Observable<any>{
