@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DocumentoXLSXComponent } from './documento-xlsx.component';
+import { HereMapComponent } from './here-map.component';
 
-describe('DocumentoXLSXComponent', () => {
-  let component: DocumentoXLSXComponent;
-  let fixture: ComponentFixture<DocumentoXLSXComponent>;
+describe('HereMapComponent', () => {
+  let component: HereMapComponent;
+  let fixture: ComponentFixture<HereMapComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DocumentoXLSXComponent ]
+      declarations: [ HereMapComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DocumentoXLSXComponent);
+    fixture = TestBed.createComponent(HereMapComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

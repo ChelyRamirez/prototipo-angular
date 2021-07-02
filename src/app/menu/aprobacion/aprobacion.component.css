@@ -12,6 +12,47 @@
     font-family: Avenir-Next;
     text-align: center;
 }
+#contenedor {
+    float: left;
+    background: #FFFFFF;
+    width: 96%;
+    margin: 1%;
+    padding: 1%;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 5px;
+    color: #7E7E7E;
+}
+#tabla1 {
+    width: 100%;
+    font-family: Avenir-Next;
+    font-size: 100%;
+    text-align: left;
+    overflow-y:scroll;
+}
+#tabla1::-webkit-scrollbar{
+    width:1.3ex;
+}
+#tabla1::-webkit-scrollbar-thumb{
+    background: #23283D;
+    border-radius: 2vh;
+}
+#tabla1 table {
+    text-align: center;
+}
+
+#tabla1 table tr td {
+    height: 6vh;
+    width: 100vh;
+}
+#tabla1 table tr th{
+    background-color: #FFF; 
+    color: #7e7e7e; 
+    border: solid 0.5px #7E7E7E; 
+    border-radius: 1vh;
+    font-family: Avenir-Next;
+    height: 6vh;
+    width: 100vh;
+}
 .form {
     float: left;
     font-family: Avenir-Next;

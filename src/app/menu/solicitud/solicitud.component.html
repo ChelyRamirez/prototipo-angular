@@ -1,4 +1,3 @@
-
 <header>
     <div class="header">
         <img src="../../../assets/img/icono2.png">
@@ -14,29 +13,44 @@
     <div container>
         <div class="logo-image"></div>
         <div class="form">
-            <form action="solicitud.php" method="POST">
+            <form (ngSubmit)= "registrar()"> 
                 <fieldset>
-                    <br><input type="text" name="nombre" class="form-input"  placeholder="Nombre completo" required/>
-                    <br><input type="text" name="telefono" class="form-input"  placeholder="Teléfono" required/> 
-                    <br><input type="text" name="empresa" class="form-input"  placeholder="Empresa" required/>
-                    <br><input style="width: 49%;" type="text" name="sueldo" class="form-input"  placeholder="Sueldo $" required/>&nbsp;
-                    <input style="width: 49%;" type="text" name="monto" class="form-input"  placeholder="Monto a pagar $" required/>
-                    <br><input type="text" name="anti" class="form-input"  placeholder="Antigüedad en la empresa" required/>
-                    <br><input type="text" name="domicilio" class="form-input"  placeholder="Domicilio" required/>
-                    <br><input style="width: 49%;" type="text" name="latitud" class="form-input"  placeholder="Latidud" required/>&nbsp;
-                    <input style="width: 49%;" type="text" name="longitud" class="form-input"  placeholder="Longitud" required/>
-                    <input class="form-btn" name="submit" type="submit" value="INGRESAR" style="background-color: #23283D; color: #FFF;">
+                    <br><input style="width: 34.5%;" type="text" name="nombre" class="form-input"  placeholder="Nombre(s)" required  [(ngModel)]='data.nombrePersona' />&nbsp;
+                    <input style="width: 31%;" type="text" name="apellidoPaterno" class="form-input"  placeholder="Apellido Paterno" required [(ngModel)]='data.apPaterno' />&nbsp;
+                    <input style="width: 31%;" type="text" name="apellidoMaterno" class="form-input"  placeholder="Apellido Materno" required [(ngModel)]='data.apMaterno' />
+                    <input type="text" name="telefono" class="form-input"  placeholder="Teléfono" required [(ngModel)]='data.telefono' />
+                    <input type="text" name="empresa" class="form-input"  placeholder="Empresa" required [(ngModel)]='data.empresa' />
+                    <br><input style="width: 49%;" type="number" name="sueldo" class="form-input"  placeholder="Sueldo $" required [(ngModel)]='data.sueldo' />&nbsp;
+                    <input style="width: 49%;" type="text" name="monto" class="form-input"  placeholder="Monto a pagar $" required [(ngModel)]='data.pagoMax' />
+                    <br><input type="text" name="anti" class="form-input"  placeholder="Antigüedad en la empresa" required [(ngModel)]='data.antiguedad' />
+                    <br><input type="text" name="estado" class="form-input"  placeholder="Estado" required [(ngModel)]='data.estado' />
+                    <br><input type="text" name="ciudad" class="form-input"  placeholder="Ciudad" required [(ngModel)]='data.ciudad' />
+                    <br><input type="text" name="colonia" class="form-input"  placeholder="Colonia" required [(ngModel)]='data.colonia' />
+                    <br><input type="text" name="calle" class="form-input"  placeholder="Calle" required [(ngModel)]='data.calle' />
+                    <br><input type="text" name="cp" class="form-input"  placeholder="Código Postal" required [(ngModel)]='data.codigoPostal' />
+                    <br><input style="width: 49%;" type="text" name="numExt" class="form-input"  placeholder="Núm. Ext." required [(ngModel)]='data.numExt' />&nbsp;
+                    <input style="width: 49%;" type="text" name="numInt" class="form-input"  placeholder="Núm. Int" required [(ngModel)]='data.numInt' />
+                    <br><input style="width: 49%;" type="text" name="latitud" class="form-input"  placeholder="Latidud" required [(ngModel)]='data.latitud' />&nbsp;
+                    <input style="width: 49%;" type="text" name="longitud" class="form-input"  placeholder="Longitud" required [(ngModel)]='data.longitud' />
+                    <input class="form-btn" name="submit" type="submit" value="INGRESAR" style="background-color: #23283D;">
                 </fieldset>
             </form>
         </div>
         <div class="forma">
             <form action="foto-form">
                 <fieldset>
-                    <img src="../../../assets/img/mapa.png" alt="mapa">
-                    <fieldset>
-                        <a href="foto-form.html"><img src="../../../assets/img/camara.png"></a>
-                    </fieldset> 
+                    <div class="mapa">
+                        <!--Aquí va el mapa-->
+                        <here-map _apikey="Ib2YJfQW-Ak3OnSVB5943IkDnFavxZKnbv6euTs6Mz8" lat="data.latitud" lng="data.longitud" width="100%" height="100%"></here-map>
+                        <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+                        <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+                        <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+                        <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+                      </div>
                 </fieldset>
+                <br><fieldset class="foto">
+                    <a href="foto-form.html"><img src="../../../assets/img/camara.png"></a>
+                </fieldset> 
             </form>
         </div>
     </div>

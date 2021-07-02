@@ -13,6 +13,8 @@ import { ReporteExcelComponent } from './reporte/reporte-excel/reporte-excel.com
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './inicio/menu.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { HereMapComponent } from './solicitud/here-map/here-map.component';
 
 
 
@@ -28,11 +30,13 @@ import { MenuComponent } from './inicio/menu.component';
     BitacoraComponent,
     PerfilComponent,
     ReportePDFComponent,
-    ReporteExcelComponent
+    ReporteExcelComponent,
+    HereMapComponent
   ],
   exports: [],
 
   imports: [
+    BrowserModule,
     CommonModule,
     FormsModule,
     HttpClientModule,

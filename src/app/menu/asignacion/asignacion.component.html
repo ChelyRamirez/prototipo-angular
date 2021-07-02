@@ -9,7 +9,9 @@
     </div>
 </header>
 <body>
-    <h2 class="title">ASIGNACIÓN DE VISITA</h2>
+    <h2 class="title"><input type="text" name="clienteAsig" placeholder="Cliente seleccionado" class="CliAsi" [value]="cliente.nombrePersona + cliente.apPaterno + cliente.apMaterno"> 
+        ASIGNACIÓN DE VISITA 
+        <input type="text" name="visitadorAsig" placeholder="Visitador seleccionado" class="VisAsi" [value]="empleadose.nombre + empleadose.app + empleadose.apm"></h2>
     <div id="contenedor">
         <div id="tabla1">
             <fieldset>
@@ -18,24 +20,12 @@
                         <th>Nombre</th>
                         <th>Status alta</th>
                         <th>Status visita</th>
-                        <th>Asignar visita</th>
                         <th>Fecha de visita</th>
                     </tr>
-                    <tr><td>Araceli Ramírez</td> <td>Alta</td> <td>Visitado</td> <td>Dalia Gómez</td> <td>24/junio/2021</td></tr>
-                    <tr><td>Araceli Ramírez</td> <td>Alta</td> <td>Visitado</td> <td>Dalia Gómez</td> <td>24/junio/2021</td></tr>
-                    <tr><td>Araceli Ramírez</td> <td>Alta</td> <td>Visitado</td> <td>Dalia Gómez</td> <td>24/junio/2021</td></tr>
-                    <tr><td>Araceli Ramírez</td> <td>Alta</td> <td>Visitado</td> <td>Dalia Gómez</td> <td>24/junio/2021</td></tr>
-                    <tr><td>Araceli Ramírez</td> <td>Alta</td> <td>Visitado</td> <td>Dalia Gómez</td> <td>24/junio/2021</td></tr>
-                    <tr><td>Araceli Ramírez</td> <td>Alta</td> <td>Visitado</td> <td>Dalia Gómez</td> <td>24/junio/2021</td></tr>
-                    <tr><td>Araceli Ramírez</td> <td>Alta</td> <td>Visitado</td> <td>Dalia Gómez</td> <td>24/junio/2021</td></tr>
-                    <tr><td>Araceli Ramírez</td> <td>Alta</td> <td>Visitado</td> <td>Dalia Gómez</td> <td>24/junio/2021</td></tr>
-                    <tr><td>Araceli Ramírez</td> <td>Alta</td> <td>Visitado</td> <td>Dalia Gómez</td> <td>24/junio/2021</td></tr>
-                    <tr><td>Araceli Ramírez</td> <td>Alta</td> <td>Visitado</td> <td>Dalia Gómez</td> <td>24/junio/2021</td></tr>
-                    <tr><td>Araceli Ramírez</td> <td>Alta</td> <td>Visitado</td> <td>Dalia Gómez</td> <td>24/junio/2021</td></tr>
-                    <tr><td>Araceli Ramírez</td> <td>Alta</td> <td>Visitado</td> <td>Dalia Gómez</td> <td>24/junio/2021</td></tr>
-                    <tr><td>Araceli Ramírez</td> <td>Alta</td> <td>Visitado</td> <td>Dalia Gómez</td> <td>24/junio/2021</td></tr>
-                    <tr><td>Araceli Ramírez</td> <td>Alta</td> <td>Visitado</td> <td>Dalia Gómez</td> <td>24/junio/2021</td></tr>
-                    <tr><td>Araceli Ramírez</td> <td>Alta</td> <td>Visitado</td> <td>Dalia Gómez</td> <td>24/junio/2021</td></tr>
+                    <tr *ngFor="let cliente of clientelist" (click)="asignarCliente(cliente.idcliente, cliente.nombrepersona, cliente.appaterno, cliente.apmaterno)">
+                        <td>{{cliente.nombrepersona}} {{cliente.appaterno}} {{cliente.apmaterno}}</td> 
+                        <td>Activo</td> <td>Sin visitador</td>  <td>{{cliente.fechavisita}}</td>
+                    </tr>
                 </table>
             </fieldset>
         </div>
@@ -47,20 +37,10 @@
                 <th>Nombre</th>
                 <th>Status</th>
             </tr>
-            <tr><td>Araceli Ramírez</td> <td>Disponible</td>
-                <tr><td>Araceli Ramírez</td> <td>No disponible</td>
-                <tr><td>Araceli Ramírez</td> <td>Disponible</td> 
-                <tr><td>Araceli Ramírez</td> <td>Disponible</td> 
-                <tr><td>Araceli Ramírez</td> <td>Disponible</td>
-                <tr><td>Araceli Ramírez</td> <td>No disponible</td> 
-                <tr><td>Araceli Ramírez</td> <td>Disponible</td> 
-                <tr><td>Araceli Ramírez</td> <td>Disponible</td> 
-                <tr><td>Araceli Ramírez</td> <td>Disponible</td>
-                <tr><td>Araceli Ramírez</td> <td>No disponible</td> 
-                <tr><td>Araceli Ramírez</td> <td>Disponible</td> 
-                <tr><td>Araceli Ramírez</td> <td>Disponible</td> 
-                <tr><td>Araceli Ramírez</td> <td>Disponible</td>
-                <tr><td colspan="2"><input type="button" class="button" value="GUARDAR" OnClick="location.href='menu.html'"></td></tr>
+            <tr *ngFor="let empleado of empleadolist" (click)="asignarVisitador(empleado.idempleado, empleado.nombrepersona, empleado.appaterno, empleado.apmaterno)">
+                <td>{{empleado.nombrepersona}} {{empleado.appaterno}} {{empleado.apmaterno}}</td> 
+                <td>Disponible</td>
+                <tr><td colspan="2"><input type="button" class="button" value="GUARDAR" (click)="asignarVisita()"></td></tr>
                 </table>
         </fieldset>
         </div>
