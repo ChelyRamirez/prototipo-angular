@@ -38,6 +38,26 @@ body{
     border-radius: 5px;
     color: #7E7E7E;
 }
+.CliAsi{
+    height: 1cm;
+    border-radius: 1vh;
+    font-family: Avenir-Next;
+    font-size: 100%;
+    border: solid 0.5px #7E7E7E; 
+    border-radius: 1vh;
+    float: left;
+    margin-left: 2vh;
+}
+.VisAsi{
+    height: 1cm;
+    border-radius: 1vh;
+    font-family: Avenir-Next;
+    font-size: 100%;
+    border: solid 0.5px #7E7E7E; 
+    border-radius: 1vh;
+    float: right;
+    margin-right: 2.5vh;
+}
 #tabla1 {
     float: left;
     width: 100%;

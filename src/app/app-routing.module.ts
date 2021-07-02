@@ -13,6 +13,7 @@ import { ReporteExcelComponent } from './menu/reporte/reporte-excel/reporte-exce
 import { DocumentoPDFComponent } from './menu/reporte/reporte-pdf/documento-pdf/documento-pdf.component';
 import { ReportePDFComponent } from './menu/reporte/reporte-pdf/reporte-pdf.component';
 import { ReporteComponent } from './menu/reporte/reporte.component';
+import { HereMapComponent } from './menu/solicitud/here-map/here-map.component';
 import { SolicitudComponent } from './menu/solicitud/solicitud.component';
 import { UsuarioComponent } from './menu/usuario/usuario.component';
 
@@ -32,7 +33,8 @@ const routes: Routes = [
   {path: "reportePDF", component: ReportePDFComponent},
   {path: "reporteExcel", component: ReporteExcelComponent},
   {path: "documentoExcel", component: DocumentoXLSXComponent},
-  {path: "documentoPDF", component: DocumentoPDFComponent}
+  {path: "documentoPDF", component: DocumentoPDFComponent},
+  {path: "mapa", component: HereMapComponent}
 ];
 
 @NgModule({

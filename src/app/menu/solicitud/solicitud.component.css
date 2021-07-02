@@ -29,13 +29,17 @@
     background: #FFFFFF;
     width: 51%;
     margin: 1%;
+    height: 120vh;
     padding: 1%;
     text-align: right;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     border-radius: 5px;
 }
 .mapa{
-    height: 54vh;
+    height: 70vh;
+}
+.foto{
+    height: 40vh;
 }
 .title{
     color: #7E7E7E;
