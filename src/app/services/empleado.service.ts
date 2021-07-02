@@ -14,7 +14,7 @@ export class EmpleadoService {
 
 
   obtenerEmpleados(): Observable<any> {
-    return this.http.get(`${Commons.BASE_URL}obtenerEmpleados`);
+    return this.http.get(`${Commons.BASE_URL}obtenerVisitadores`);
   }
 
 }

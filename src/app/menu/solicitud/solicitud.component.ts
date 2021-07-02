@@ -65,7 +65,11 @@ export class SolicitudComponent implements OnInit {
           this.bit.idEmpleado = this.log.idEmpleado;
           this.bitacora.registrarBitacora(this.bit).subscribe(
             res => {
-  
+              Swal.fire({
+                icon: 'success',
+                title: '¡CORRECTO!',
+                text: 'Se ha guardado la solicitud'
+              });
               return this.restablecer();     
             },
             err => console.log(err)
@@ -88,10 +92,10 @@ export class SolicitudComponent implements OnInit {
       apMaterno: "",
       fotoINE: "",
       telefono: "",
-      sueldo: 0,
+      sueldo: null,
       empresa: "",
       antiguedad: "",
-      pagoMax: 0,
+      pagoMax: null,
       estado: "",
       ciudad: "",
       codigoPostal: "",
@@ -99,8 +103,8 @@ export class SolicitudComponent implements OnInit {
       calle: "",
       numExt: "",
       numInt: "",
-      latitud: 0.0,
-      longitud: 0.0,
+      latitud: null,
+      longitud: null,
     }
   }
 
@@ -120,95 +124,108 @@ export class SolicitudComponent implements OnInit {
                             if(this.data.numExt !== null){
                               return 1;
                             } else {
-                              return Swal.fire({
+                              Swal.fire({
                                 icon: 'error',
                                 title: '¡ERROR!',
                                 text: 'Debe llenar todos los campos'
                               });
+                              return 0;
                             }
                           } else {
-                            return Swal.fire({
+                             Swal.fire({
                               icon: 'error',
                               title: '¡ERROR!',
                               text: 'Debe llenar todos los campos'
                             });
+                            return 0;
                           }
                         } else {
-                          return Swal.fire({
+                          Swal.fire({
                             icon: 'error',
                             title: '¡ERROR!',
                             text: 'Debe llenar todos los campos'
                           });
+                          return 0;
                         }
                       } else {
-                        return Swal.fire({
+                        Swal.fire({
                           icon: 'error',
                           title: '¡ERROR!',
                           text: 'Debe llenar todos los campos'
                         });
+                        return 0;
                       }
                     } else {
-                      return Swal.fire({
+                      Swal.fire({
                         icon: 'error',
                         title: '¡ERROR!',
                         text: 'Debe llenar todos los campos'
                       });
+                      return 0;
                     }
                   } else {
-                    return Swal.fire({
+                    Swal.fire({
                       icon: 'error',
                       title: '¡ERROR!',
                       text: 'Debe llenar todos los campos'
                     });
+                    return 0;
                   }
                 } else {
-                  return Swal.fire({
+                  Swal.fire({
                     icon: 'error',
                     title: '¡ERROR!',
                     text: 'Debe llenar todos los campos'
                   });
+                  return 0;
                 }
               } else {
-                return Swal.fire({
+                Swal.fire({
                   icon: 'error',
                   title: '¡ERROR!',
                   text: 'Debe llenar todos los campos'
                 });
+                return 0;
               }
             } else {
-              return Swal.fire({
+              Swal.fire({
                 icon: 'error',
                 title: '¡ERROR!',
                 text: 'Debe llenar todos los campos'
               });
+              return 0;
             }
           } else {
-            return Swal.fire({
+            Swal.fire({
               icon: 'error',
               title: '¡ERROR!',
               text: 'Debe llenar todos los campos'
             });
+            return 0;
           }
         } else {
-          return Swal.fire({
+          Swal.fire({
             icon: 'error',
             title: '¡ERROR!',
             text: 'Debe llenar todos los campos'
           });
+          return 0;
         }
         } else {
-          return Swal.fire({
+          Swal.fire({
             icon: 'error',
             title: '¡ERROR!',
             text: 'Debe llenar todos los campos'
           });
+          return 0;
         }
       } else {
-        return Swal.fire({
+        Swal.fire({
           icon: 'error',
           title: '¡ERROR!',
           text: 'Debe llenar todos los campos'
         });
+        return 0;
       }
   }
 }

@@ -20,7 +20,7 @@
                         <th>Status visita</th>
                         <th>Fecha de visita</th>
                     </tr>
-                    <tr *ngFor="let cliente of registros">
+                    <tr *ngFor="let cliente of clientelist" (click)="asignarCliente(cliente.idcliente)">
                         <td>{{cliente.nombrepersona}} {{cliente.appaterno}} {{cliente.apmaterno}}</td> 
                         <td>Activo</td> <td>Sin visitador</td>  <td>{{cliente.fechavisita}}</td>
                     </tr>
@@ -35,9 +35,10 @@
                 <th>Nombre</th>
                 <th>Status</th>
             </tr>
-            <tr *ngFor="let empleado of registrose"><td>{{empleado.nombrepersona}} {{empleado.appaterno}} {{empleado.apmaterno}}</td> 
+            <tr *ngFor="let empleado of empleadolist" (click)="asignarVisitador(empleado.idempleado)">
+                <td>{{empleado.nombrepersona}} {{empleado.appaterno}} {{empleado.apmaterno}}</td> 
                 <td>Disponible</td>
-                <tr><td colspan="2"><input type="button" class="button" value="GUARDAR" OnClick="location.href='menu.html'"></td></tr>
+                <tr><td colspan="2"><input type="button" class="button" value="GUARDAR" (click)="asignarVisita()"></td></tr>
                 </table>
         </fieldset>
         </div>
