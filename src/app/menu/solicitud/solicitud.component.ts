@@ -22,10 +22,10 @@ export class SolicitudComponent implements OnInit {
     apMaterno: "",
     fotoINE: "",
     telefono: "",
-    sueldo: 0,
+    sueldo: null,
     empresa: "",
     antiguedad: "",
-    pagoMax: 0,
+    pagoMax: null,
     estado: "",
     ciudad: "",
     codigoPostal: "",
@@ -33,8 +33,8 @@ export class SolicitudComponent implements OnInit {
     calle: "",
     numExt: "",
     numInt: "",
-    latitud: 0.0,
-    longitud: 0.0,
+    latitud: null,
+    longitud: null,
   }
 
   bit: Bitacora = {
@@ -56,22 +56,29 @@ export class SolicitudComponent implements OnInit {
 
 
   registrar(){
-    this.cliente.registrarCliente(this.data).subscribe(
-      res => {
-        if( !res.ok ) {
-          return console.log(res);
-        }
-        this.bit.idEmpleado = this.log.idEmpleado;
-        this.bitacora.registrarBitacora(this.bit).subscribe(
-          res => {
-
-            return this.restablecer();     
-          },
-          err => console.log(err)
-        )
-      },    
-      err => console.log(err)
-      );
+    if(this.verificar() === 1){
+      this.cliente.registrarCliente(this.data).subscribe(
+        res => {
+          if( !res.ok ) {
+            return console.log(res);
+          }
+          this.bit.idEmpleado = this.log.idEmpleado;
+          this.bitacora.registrarBitacora(this.bit).subscribe(
+            res => {
+  
+              return this.restablecer();     
+            },
+            err => console.log(err)
+          )
+        },    
+        err => console.log(err)
+        );
+    }
+    return Swal.fire({
+      icon: 'error',
+      title: '¡ERROR!',
+      text: 'Debe llenar todos los campos'
+    });
   }
 
   restablecer(){
@@ -98,6 +105,110 @@ export class SolicitudComponent implements OnInit {
   }
 
   verificar(){
-      
+    if( this.data.nombrePersona !== null ){
+      if(this.data.apPaterno !== null ){
+        if(this.data.telefono !== null){
+          if(this.data.sueldo !== null){
+            if(this.data.empresa !== null){
+              if(this.data.antiguedad !== null){
+                if(this.data.pagoMax !== null){
+                  if(this.data.estado !== null){
+                    if(this.data.ciudad !== null){
+                      if(this.data.codigoPostal !== null){
+                        if(this.data.colonia !== null){
+                          if(this.data.calle !== null){
+                            if(this.data.numExt !== null){
+                              return 1;
+                            } else {
+                              return Swal.fire({
+                                icon: 'error',
+                                title: '¡ERROR!',
+                                text: 'Debe llenar todos los campos'
+                              });
+                            }
+                          } else {
+                            return Swal.fire({
+                              icon: 'error',
+                              title: '¡ERROR!',
+                              text: 'Debe llenar todos los campos'
+                            });
+                          }
+                        } else {
+                          return Swal.fire({
+                            icon: 'error',
+                            title: '¡ERROR!',
+                            text: 'Debe llenar todos los campos'
+                          });
+                        }
+                      } else {
+                        return Swal.fire({
+                          icon: 'error',
+                          title: '¡ERROR!',
+                          text: 'Debe llenar todos los campos'
+                        });
+                      }
+                    } else {
+                      return Swal.fire({
+                        icon: 'error',
+                        title: '¡ERROR!',
+                        text: 'Debe llenar todos los campos'
+                      });
+                    }
+                  } else {
+                    return Swal.fire({
+                      icon: 'error',
+                      title: '¡ERROR!',
+                      text: 'Debe llenar todos los campos'
+                    });
+                  }
+                } else {
+                  return Swal.fire({
+                    icon: 'error',
+                    title: '¡ERROR!',
+                    text: 'Debe llenar todos los campos'
+                  });
+                }
+              } else {
+                return Swal.fire({
+                  icon: 'error',
+                  title: '¡ERROR!',
+                  text: 'Debe llenar todos los campos'
+                });
+              }
+            } else {
+              return Swal.fire({
+                icon: 'error',
+                title: '¡ERROR!',
+                text: 'Debe llenar todos los campos'
+              });
+            }
+          } else {
+            return Swal.fire({
+              icon: 'error',
+              title: '¡ERROR!',
+              text: 'Debe llenar todos los campos'
+            });
+          }
+        } else {
+          return Swal.fire({
+            icon: 'error',
+            title: '¡ERROR!',
+            text: 'Debe llenar todos los campos'
+          });
+        }
+        } else {
+          return Swal.fire({
+            icon: 'error',
+            title: '¡ERROR!',
+            text: 'Debe llenar todos los campos'
+          });
+        }
+      } else {
+        return Swal.fire({
+          icon: 'error',
+          title: '¡ERROR!',
+          text: 'Debe llenar todos los campos'
+        });
+      }
   }
 }

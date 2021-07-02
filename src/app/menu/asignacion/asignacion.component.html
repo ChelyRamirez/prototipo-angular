@@ -18,24 +18,12 @@
                         <th>Nombre</th>
                         <th>Status alta</th>
                         <th>Status visita</th>
-                        <th>Asignar visita</th>
                         <th>Fecha de visita</th>
                     </tr>
-                    <tr><td>Araceli Ramírez</td> <td>Alta</td> <td>Visitado</td> <td>Dalia Gómez</td> <td>24/junio/2021</td></tr>
-                    <tr><td>Araceli Ramírez</td> <td>Alta</td> <td>Visitado</td> <td>Dalia Gómez</td> <td>24/junio/2021</td></tr>
-                    <tr><td>Araceli Ramírez</td> <td>Alta</td> <td>Visitado</td> <td>Dalia Gómez</td> <td>24/junio/2021</td></tr>
-                    <tr><td>Araceli Ramírez</td> <td>Alta</td> <td>Visitado</td> <td>Dalia Gómez</td> <td>24/junio/2021</td></tr>
-                    <tr><td>Araceli Ramírez</td> <td>Alta</td> <td>Visitado</td> <td>Dalia Gómez</td> <td>24/junio/2021</td></tr>
-                    <tr><td>Araceli Ramírez</td> <td>Alta</td> <td>Visitado</td> <td>Dalia Gómez</td> <td>24/junio/2021</td></tr>
-                    <tr><td>Araceli Ramírez</td> <td>Alta</td> <td>Visitado</td> <td>Dalia Gómez</td> <td>24/junio/2021</td></tr>
-                    <tr><td>Araceli Ramírez</td> <td>Alta</td> <td>Visitado</td> <td>Dalia Gómez</td> <td>24/junio/2021</td></tr>
-                    <tr><td>Araceli Ramírez</td> <td>Alta</td> <td>Visitado</td> <td>Dalia Gómez</td> <td>24/junio/2021</td></tr>
-                    <tr><td>Araceli Ramírez</td> <td>Alta</td> <td>Visitado</td> <td>Dalia Gómez</td> <td>24/junio/2021</td></tr>
-                    <tr><td>Araceli Ramírez</td> <td>Alta</td> <td>Visitado</td> <td>Dalia Gómez</td> <td>24/junio/2021</td></tr>
-                    <tr><td>Araceli Ramírez</td> <td>Alta</td> <td>Visitado</td> <td>Dalia Gómez</td> <td>24/junio/2021</td></tr>
-                    <tr><td>Araceli Ramírez</td> <td>Alta</td> <td>Visitado</td> <td>Dalia Gómez</td> <td>24/junio/2021</td></tr>
-                    <tr><td>Araceli Ramírez</td> <td>Alta</td> <td>Visitado</td> <td>Dalia Gómez</td> <td>24/junio/2021</td></tr>
-                    <tr><td>Araceli Ramírez</td> <td>Alta</td> <td>Visitado</td> <td>Dalia Gómez</td> <td>24/junio/2021</td></tr>
+                    <tr *ngFor="let cliente of registros">
+                        <td>{{cliente.nombrepersona}} {{cliente.appaterno}} {{cliente.apmaterno}}</td> 
+                        <td>Activo</td> <td>Sin visitador</td>  <td>{{cliente.fechavisita}}</td>
+                    </tr>
                 </table>
             </fieldset>
         </div>
@@ -47,19 +35,8 @@
                 <th>Nombre</th>
                 <th>Status</th>
             </tr>
-            <tr><td>Araceli Ramírez</td> <td>Disponible</td>
-                <tr><td>Araceli Ramírez</td> <td>No disponible</td>
-                <tr><td>Araceli Ramírez</td> <td>Disponible</td> 
-                <tr><td>Araceli Ramírez</td> <td>Disponible</td> 
-                <tr><td>Araceli Ramírez</td> <td>Disponible</td>
-                <tr><td>Araceli Ramírez</td> <td>No disponible</td> 
-                <tr><td>Araceli Ramírez</td> <td>Disponible</td> 
-                <tr><td>Araceli Ramírez</td> <td>Disponible</td> 
-                <tr><td>Araceli Ramírez</td> <td>Disponible</td>
-                <tr><td>Araceli Ramírez</td> <td>No disponible</td> 
-                <tr><td>Araceli Ramírez</td> <td>Disponible</td> 
-                <tr><td>Araceli Ramírez</td> <td>Disponible</td> 
-                <tr><td>Araceli Ramírez</td> <td>Disponible</td>
+            <tr *ngFor="let empleado of registrose"><td>{{empleado.nombrepersona}} {{empleado.appaterno}} {{empleado.apmaterno}}</td> 
+                <td>Disponible</td>
                 <tr><td colspan="2"><input type="button" class="button" value="GUARDAR" OnClick="location.href='menu.html'"></td></tr>
                 </table>
         </fieldset>
