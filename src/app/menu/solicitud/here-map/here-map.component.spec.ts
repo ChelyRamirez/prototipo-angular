@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HereMapComponent } from './mapa-here.component';
+import { HereMapComponent } from './here-map.component';
 
 describe('HereMapComponent', () => {
   let component: HereMapComponent;

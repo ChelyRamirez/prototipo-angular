@@ -15,6 +15,7 @@ import { MenuModule } from './menu/menu.module';
 import { HereMapsModule } from 'ng2-heremaps';
 import { ReporteService } from './services/reporte.service';
 import { ClienteService } from './services/cliente.service';
+import { HereMapComponent } from './menu/solicitud/here-map/here-map.component';
 
 @NgModule({
   declarations: [
@@ -31,12 +32,6 @@ import { ClienteService } from './services/cliente.service';
     HttpClientModule,
     FormsModule,
     MenuModule,
-    HereMapsModule.forRoot({
-    apiKey: 'Ib2YJfQW-Ak3OnSVB5943IkDnFavxZKnbv6euTs6Mz8',
-    appId: '3RezJgPr8UGLslM3w4KZ',
-    apiVersion: '3.0',
-    libraries: ['core', 'service']
-    })
   ],
   providers: [
     LoginService,
