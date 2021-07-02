@@ -4,8 +4,8 @@ declare var H: any;
 
 @Component({
     selector: 'here-map',
-    templateUrl: './mapa-here.component.html',
-    styleUrls: ['./mapa-here.component.css']
+    templateUrl: './here-map.component.html',
+    styleUrls: ['./here-map.component.css']
 })
 export class HereMapComponent implements OnInit {
 
