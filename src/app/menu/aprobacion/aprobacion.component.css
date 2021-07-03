@@ -28,6 +28,12 @@
     font-size: 100%;
     text-align: left;
     overflow-y:scroll;
+    height: 28vh;
+}
+#tabla1 th{
+    position: sticky;
+    top: 0vh;
+    z-index: 10;
 }
 #tabla1::-webkit-scrollbar{
     width:1.3ex;
@@ -45,9 +51,9 @@
     width: 100vh;
 }
 #tabla1 table tr th{
-    background-color: #FFF; 
-    color: #7e7e7e; 
-    border: solid 0.5px #7E7E7E; 
+    background-color: #23283D; 
+    color: #FFF; 
+    border: solid 0.2vh #7E7E7E; 
     border-radius: 1vh;
     font-family: Avenir-Next;
     height: 6vh;
@@ -110,6 +116,16 @@
     width: 100%;
     margin: 0 auto;
     columns: 2;
+}
+tr:hover td { 
+    background: #3d3d3d; 
+    color: #FFF;
+}
+table tr:nth-child(odd) {background-color: #E5E5E5;
+    padding: 8%;
+    border-bottom: 1px solid #fff;
+    color: #7E7E7E;    
+    border-top: 1px solid transparent; 
 }
 body{
     background-color: #fff;

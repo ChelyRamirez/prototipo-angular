@@ -23,6 +23,12 @@
 #tabla1 table {
     text-align: center;
 }
+
+#tabla1 th{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
 h2 {
     color: #7E7E7E;
     font-family: Avenir-Next;
