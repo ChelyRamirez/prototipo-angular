@@ -1,18 +1,20 @@
 <header>
     <div class="header">
-        <img src="../../../assets/img/icono2.png">
+        <img [src]="rutaIMG + '/icono2.png'">
         <div class="but">
             <form action="menu">
-                <a href="/menu"><img src="../../../assets/img/menu.png"/></a>
+                <a href="/Prototipo_web/#/menu"><img [src]="rutaIMG + '/menu.png'" /></a>
             </form>
         </div>
     </div>
 </header>
+
 <body>
     <h2 class="title">CONSULTA GENERAL</h2>
-    <br><div id="contenedor">
+    <br>
+    <div id="contenedor">
         <div id="tabla1">
-            <table style="border: solid 0px"> 
+            <table style="border: solid 0px">
                 <tr>
                     <th>Nombre</th>
                     <th>Fecha de alta</th>
@@ -22,22 +24,150 @@
                     <th>Visitador</th>
                     <th>Motivo</th>
                 </tr>
-                <tr> <td>Araceli Ramírez</td>  <td>26/Junio/2021</td> <td>28/Junio/2021</td> <td>Sí</td> <td>$5,000.00</td> <td>Dalia Gómez</td> <td></td></tr>
-                <tr> <td>Araceli Ramírez</td>  <td>26/Junio/2021</td> <td>28/Junio/2021</td> <td>Sí</td> <td>$5,000.00</td> <td>Dalia Gómez</td> <td></td></tr>
-                <tr> <td>Araceli Ramírez</td>  <td>26/Junio/2021</td> <td>28/Junio/2021</td> <td>Sí</td> <td>$5,000.00</td> <td>Dalia Gómez</td> <td></td></tr>
-                <tr> <td>Araceli Ramírez</td>  <td>26/Junio/2021</td> <td>28/Junio/2021</td> <td>Sí</td> <td>$5,000.00</td> <td>Dalia Gómez</td> <td></td></tr>
-                <tr> <td>Araceli Ramírez</td>  <td>26/Junio/2021</td> <td>28/Junio/2021</td> <td>No</td> <td>$00.00</td> <td>Dalia Gómez</td> <td>Se rechazó la visita</td></tr>
-                <tr> <td>Araceli Ramírez</td>  <td>26/Junio/2021</td> <td>28/Junio/2021</td> <td>No</td> <td>$5,000.00</td> <td>Dalia Gómez</td> <td>No se encontró el domicilio</td></tr>
-                <tr> <td>Araceli Ramírez</td>  <td>26/Junio/2021</td> <td>28/Junio/2021</td> <td>No</td> <td>$00.00</td> <td>Dalia Gómez</td> <td>El residente no vivía ahí</td></tr>
-                <tr> <td>Araceli Ramírez</td>  <td>26/Junio/2021</td> <td>28/Junio/2021</td> <td>Sí</td> <td>$5,000.00</td> <td>Dalia Gómez</td> <td></td></tr>
-                <tr> <td>Araceli Ramírez</td>  <td>26/Junio/2021</td> <td>28/Junio/2021</td> <td>Sí</td> <td>$5,000.00</td> <td>Dalia Gómez</td> <td></td></tr>
-                <tr> <td>Araceli Ramírez</td>  <td>26/Junio/2021</td> <td>28/Junio/2021</td> <td>Sí</td> <td>$5,000.00</td> <td>Dalia Gómez</td> <td></td></tr>
-                <tr> <td>Araceli Ramírez</td>  <td>26/Junio/2021</td> <td>28/Junio/2021</td> <td>No</td> <td>$00.00</td> <td>Dalia Gómez</td> <td>Se abandonó la visita</td></tr>
-                <tr> <td>Araceli Ramírez</td>  <td>26/Junio/2021</td> <td>28/Junio/2021</td> <td>Sí</td> <td>$5,000.00</td> <td>Dalia Gómez</td> <td></td></tr>
-                <tr> <td>Araceli Ramírez</td>  <td>26/Junio/2021</td> <td>28/Junio/2021</td> <td>No</td> <td>$00.00</td> <td>Dalia Gómez</td> <td>Se rechazó la visita</td></tr>
-                <tr> <td>Araceli Ramírez</td>  <td>26/Junio/2021</td> <td>28/Junio/2021</td> <td>Sí</td> <td>$5,000.00</td> <td>Dalia Gómez</td> <td></td></tr>
-                <tr> <td>Araceli Ramírez</td>  <td>26/Junio/2021</td> <td>28/Junio/2021</td> <td>Sí</td> <td>$5,000.00</td> <td>Dalia Gómez</td> <td></td></tr>
-                <tr> <td>Araceli Ramírez</td>  <td>26/Junio/2021</td> <td>28/Junio/2021</td> <td>Sí</td> <td>$5,000.00</td> <td>Dalia Gómez</td> <td></td></tr>
+                <tr>
+                    <td>Araceli Ramírez</td>
+                    <td>26/Junio/2021</td>
+                    <td>28/Junio/2021</td>
+                    <td>Sí</td>
+                    <td>$5,000.00</td>
+                    <td>Dalia Gómez</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Araceli Ramírez</td>
+                    <td>26/Junio/2021</td>
+                    <td>28/Junio/2021</td>
+                    <td>Sí</td>
+                    <td>$5,000.00</td>
+                    <td>Dalia Gómez</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Araceli Ramírez</td>
+                    <td>26/Junio/2021</td>
+                    <td>28/Junio/2021</td>
+                    <td>Sí</td>
+                    <td>$5,000.00</td>
+                    <td>Dalia Gómez</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Araceli Ramírez</td>
+                    <td>26/Junio/2021</td>
+                    <td>28/Junio/2021</td>
+                    <td>Sí</td>
+                    <td>$5,000.00</td>
+                    <td>Dalia Gómez</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Araceli Ramírez</td>
+                    <td>26/Junio/2021</td>
+                    <td>28/Junio/2021</td>
+                    <td>No</td>
+                    <td>$00.00</td>
+                    <td>Dalia Gómez</td>
+                    <td>Se rechazó la visita</td>
+                </tr>
+                <tr>
+                    <td>Araceli Ramírez</td>
+                    <td>26/Junio/2021</td>
+                    <td>28/Junio/2021</td>
+                    <td>No</td>
+                    <td>$5,000.00</td>
+                    <td>Dalia Gómez</td>
+                    <td>No se encontró el domicilio</td>
+                </tr>
+                <tr>
+                    <td>Araceli Ramírez</td>
+                    <td>26/Junio/2021</td>
+                    <td>28/Junio/2021</td>
+                    <td>No</td>
+                    <td>$00.00</td>
+                    <td>Dalia Gómez</td>
+                    <td>El residente no vivía ahí</td>
+                </tr>
+                <tr>
+                    <td>Araceli Ramírez</td>
+                    <td>26/Junio/2021</td>
+                    <td>28/Junio/2021</td>
+                    <td>Sí</td>
+                    <td>$5,000.00</td>
+                    <td>Dalia Gómez</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Araceli Ramírez</td>
+                    <td>26/Junio/2021</td>
+                    <td>28/Junio/2021</td>
+                    <td>Sí</td>
+                    <td>$5,000.00</td>
+                    <td>Dalia Gómez</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Araceli Ramírez</td>
+                    <td>26/Junio/2021</td>
+                    <td>28/Junio/2021</td>
+                    <td>Sí</td>
+                    <td>$5,000.00</td>
+                    <td>Dalia Gómez</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Araceli Ramírez</td>
+                    <td>26/Junio/2021</td>
+                    <td>28/Junio/2021</td>
+                    <td>No</td>
+                    <td>$00.00</td>
+                    <td>Dalia Gómez</td>
+                    <td>Se abandonó la visita</td>
+                </tr>
+                <tr>
+                    <td>Araceli Ramírez</td>
+                    <td>26/Junio/2021</td>
+                    <td>28/Junio/2021</td>
+                    <td>Sí</td>
+                    <td>$5,000.00</td>
+                    <td>Dalia Gómez</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Araceli Ramírez</td>
+                    <td>26/Junio/2021</td>
+                    <td>28/Junio/2021</td>
+                    <td>No</td>
+                    <td>$00.00</td>
+                    <td>Dalia Gómez</td>
+                    <td>Se rechazó la visita</td>
+                </tr>
+                <tr>
+                    <td>Araceli Ramírez</td>
+                    <td>26/Junio/2021</td>
+                    <td>28/Junio/2021</td>
+                    <td>Sí</td>
+                    <td>$5,000.00</td>
+                    <td>Dalia Gómez</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Araceli Ramírez</td>
+                    <td>26/Junio/2021</td>
+                    <td>28/Junio/2021</td>
+                    <td>Sí</td>
+                    <td>$5,000.00</td>
+                    <td>Dalia Gómez</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Araceli Ramírez</td>
+                    <td>26/Junio/2021</td>
+                    <td>28/Junio/2021</td>
+                    <td>Sí</td>
+                    <td>$5,000.00</td>
+                    <td>Dalia Gómez</td>
+                    <td></td>
+                </tr>
             </table>
         </div>
     </div>

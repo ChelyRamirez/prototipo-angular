@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-reporte',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reporte.component.css']
 })
 export class ReporteComponent implements OnInit {
-
+  public rutaIMG = environment.RUTA_IMAGEN;
   constructor() { }
 
   ngOnInit(): void {

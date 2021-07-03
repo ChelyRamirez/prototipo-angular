@@ -7,6 +7,7 @@ import { Bitacora } from '../../models/bitacora';
 import { User } from '../../models/empleado';
 
 import Swal from 'sweetalert2';
+import { environment } from '../../../environments/environment';
 
 
 @Component({
@@ -15,7 +16,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./solicitud.component.css']
 })
 export class SolicitudComponent implements OnInit {
-
+  public rutaIMG = environment.RUTA_IMAGEN;
   data: Cliente = {
     nombrePersona: "",
     apPaterno: "",

@@ -1,35 +1,29 @@
 <body>
-  <div class="container">
-    <div class="logo-image">
-      <img src="assets/img/logo150.png" class="imagen" />
+    <div class="container">
+        <div class="logo-image">
+            <img [src]="rutaIMG + 'logo150.png'" class="imagen" />
+        </div>
     </div>
-  </div>
-  <div contenedor>
-    <div class="login-page">
-      <div class="form">
-        <H4>INICIAR SESIÓN</H4>
-        <form class="login-form" (ngSubmit)= "login()">
-          <div class="inputWithIcon">
-            <input type="text" name="usuario" placeholder="Usuario" required [(ngModel)]='log.username' />
-          </div>
-          <div class="inputWithIcon">
-            <input
-              type="password"
-              name="contrasenia"
-              placeholder="Contraseña"
-              required
-              [(ngModel)] = "log.password"
-            />
-          </div>
-          <p>
-            <label for="recuerda">Recuérdame</label>
-            <input id="recuerda" type="checkbox" value="si" alt="Recuérdame" name="recuerda" />
-          </p>
-          <!--input>
+    <div contenedor>
+        <div class="login-page">
+            <div class="form">
+                <H4>INICIAR SESIÓN</H4>
+                <form class="login-form" (ngSubmit)="login()">
+                    <div class="inputWithIcon">
+                        <input type="text" name="usuario" placeholder="Usuario" required [(ngModel)]='log.username' />
+                    </div>
+                    <div class="inputWithIcon">
+                        <input type="password" name="contrasenia" placeholder="Contraseña" required [(ngModel)]="log.password" />
+                    </div>
+                    <p>
+                        <label for="recuerda">Recuérdame</label>
+                        <input id="recuerda" type="checkbox" value="si" alt="Recuérdame" name="recuerda" />
+                    </p>
+                    <!--input>
                         <input type="button" style="font-family: Avenir-Next; background-color: #23283D; color: #FFF;" value="ENTRAR" name="B4" OnClick="location.href='menu.html' "-->
-          <input class="form-btn" name="submit" type="submit" value="ENTRAR" style=" font-family: Avenir-Next; background-color: #23283d; color: #fff;"/>
-        </form>
-      </div>
+                    <input class="form-btn" name="submit" type="submit" value="ENTRAR" style=" font-family: Avenir-Next; background-color: #23283d; color: #fff;" />
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
 </body>
