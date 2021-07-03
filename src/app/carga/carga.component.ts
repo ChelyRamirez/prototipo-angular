@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GlobalService } from '../services/global.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -21,7 +22,14 @@ export class CargaComponent implements OnInit {
         res => {
          return this.router.navigate(['/login']);
         },
-         err => console.log(err)
+         err => {
+          Swal.fire({
+            icon: 'error',
+            title: '¡ERROR!',
+            text: 'No hubo respuesta del servidor'
+          });  
+          return console.log(err);
+        }
       );
     }, 3600);
   }
