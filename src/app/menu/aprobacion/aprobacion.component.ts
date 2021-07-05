@@ -6,6 +6,7 @@ import { VisitaService } from 'src/app/services/visita.service';
 import { User } from '../../models/empleado';
 import { Bitacora } from '../../models/bitacora';
 import Swal from 'sweetalert2';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-aprobacion',
@@ -45,6 +46,7 @@ export class AprobacionComponent implements OnInit {
     private empleado: EmpleadoService,
     private bitacora: GlobalService,
   ) { }
+  public rutaIMG = environment.RUTA_IMAGEN;
 
   ngOnInit(): void {
     this.obtenerClientes();

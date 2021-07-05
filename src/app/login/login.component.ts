@@ -7,6 +7,7 @@ import { User } from '../models/empleado';
 import { Bitacora } from '../models/bitacora';
 
 import Swal from 'sweetalert2';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +15,8 @@ import Swal from 'sweetalert2';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+  public rutaIMG = environment.RUTA_IMAGEN;
 
   log: User = {
     username: '',

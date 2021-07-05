@@ -1,24 +1,24 @@
-
 <header>
-        <div class="header">
-            <img src="../../../assets/img/icono2.png">
-            <div class="but">
-                <form action="menu">
-                    <a href="/menu"><img src="../../../assets/img/menu.png"/></a>
-                </form>
-            </div>
+    <div class="header">
+        <img [src]="rutaIMG + '/icono2.png'">
+        <div class="but">
+            <form action="menu">
+                <a href="/Prototipo_web/#/menu"><img [src]="rutaIMG + '/menu.png'" /></a>
+            </form>
         </div>
-    </header>
-    <h3 class="title">CREAR USUARIO</h3>
+    </div>
+</header>
+<h3 class="title">CREAR USUARIO</h3>
+
 <body>
     <div container>
         <div class="logo-image"></div>
         <div class="form">
             <form action="aprobacion-form.html" class="formulario">
                 <fieldset><br>
-                    <input type="text" name="nombre" class="form-input" placeholder="Nombre completo"/>
-                    <br><input type="email" name="usuario" class="form-input" placeholder="Correo electrónico"/>
-                    <br><input type="password" name="contraseña" class="form-input" placeholder="Contraseña"/>
+                    <input type="text" name="nombre" class="form-input" placeholder="Nombre completo" />
+                    <br><input type="email" name="usuario" class="form-input" placeholder="Correo electrónico" />
+                    <br><input type="password" name="contraseña" class="form-input" placeholder="Contraseña" />
                     <select name="tipo" id="tipo">
                         <option value="supervisor">Supervisor</option>
                         <option value="validador">Validador</option>
@@ -31,29 +31,62 @@
         <div class="forma">
             <div id="tabla2">
                 <fieldset>
-                    <table><tr>
-                        <th style="background-color: #23283D; color: #FFF; border-radius: 10px; height: 30px;">Usuarios</th>
-                        <th style="background-color: #23283D; color: #FFF; border-radius: 10px;">Tipo</th>
-                    </tr>
-                    <tr> <td style="height:40px;">Araceli Ramírez</td> <td>Supervisor</td> 
-                    <tr> <td style="height:40px;">Araceli Ramírez</td> <td>Supervisor</td> 
-                    <tr> <td style="height:40px;">Araceli Ramírez</td> <td>Validador</td> 
-                    <tr> <td style="height:40px;">Araceli Ramírez</td> <td>Validador</td> 
-                    <tr> <td style="height:40px;">Araceli Ramírez</td> <td>Visitador</td>
-                    <tr> <td style="height:40px;">Araceli Ramírez</td> <td>Supervisor</td> 
-                    <tr> <td style="height:40px;">Araceli Ramírez</td> <td>Supervisor</td> 
-                    <tr> <td style="height:40px;">Araceli Ramírez</td> <td>Validador</td> 
-                    <tr> <td style="height:40px;">Araceli Ramírez</td> <td>Validador</td> 
-                    <tr> <td style="height:40px;">Araceli Ramírez</td> <td>Visitador</td>
-                    <tr> <td style="height:40px;">Araceli Ramírez</td> <td>Supervisor</td> 
-                    <tr> <td style="height:40px;">Araceli Ramírez</td> <td>Supervisor</td> 
-                    <tr> <td style="height:40px;">Araceli Ramírez</td> <td>Validador</td> 
-                    <tr> <td style="height:40px;">Araceli Ramírez</td> <td>Validador</td> 
-                    <tr> <td style="height:40px;">Araceli Ramírez</td> <td>Visitador</td>
-                    <tr> <td style="height:40px;">Araceli Ramírez</td> <td>Supervisor</td> 
+                    <table>
+                        <tr>
+                            <th style="background-color: #23283D; color: #FFF; border-radius: 10px; height: 30px;">Usuarios</th>
+                            <th style="background-color: #23283D; color: #FFF; border-radius: 10px;">Tipo</th>
+                        </tr>
+                        <tr>
+                            <td style="height:40px;">Araceli Ramírez</td>
+                            <td>Supervisor</td>
+                            <tr>
+                                <td style="height:40px;">Araceli Ramírez</td>
+                                <td>Supervisor</td>
+                                <tr>
+                                    <td style="height:40px;">Araceli Ramírez</td>
+                                    <td>Validador</td>
+                                    <tr>
+                                        <td style="height:40px;">Araceli Ramírez</td>
+                                        <td>Validador</td>
+                                        <tr>
+                                            <td style="height:40px;">Araceli Ramírez</td>
+                                            <td>Visitador</td>
+                                            <tr>
+                                                <td style="height:40px;">Araceli Ramírez</td>
+                                                <td>Supervisor</td>
+                                                <tr>
+                                                    <td style="height:40px;">Araceli Ramírez</td>
+                                                    <td>Supervisor</td>
+                                                    <tr>
+                                                        <td style="height:40px;">Araceli Ramírez</td>
+                                                        <td>Validador</td>
+                                                        <tr>
+                                                            <td style="height:40px;">Araceli Ramírez</td>
+                                                            <td>Validador</td>
+                                                            <tr>
+                                                                <td style="height:40px;">Araceli Ramírez</td>
+                                                                <td>Visitador</td>
+                                                                <tr>
+                                                                    <td style="height:40px;">Araceli Ramírez</td>
+                                                                    <td>Supervisor</td>
+                                                                    <tr>
+                                                                        <td style="height:40px;">Araceli Ramírez</td>
+                                                                        <td>Supervisor</td>
+                                                                        <tr>
+                                                                            <td style="height:40px;">Araceli Ramírez</td>
+                                                                            <td>Validador</td>
+                                                                            <tr>
+                                                                                <td style="height:40px;">Araceli Ramírez</td>
+                                                                                <td>Validador</td>
+                                                                                <tr>
+                                                                                    <td style="height:40px;">Araceli Ramírez</td>
+                                                                                    <td>Visitador</td>
+                                                                                    <tr>
+                                                                                        <td style="height:40px;">Araceli Ramírez</td>
+                                                                                        <td>Supervisor</td>
                     </table>
                 </fieldset>
             </div>
         </div>
-    </div> 
+    </div>
 </body>

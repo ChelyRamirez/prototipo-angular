@@ -60,6 +60,22 @@
 .form-btn {
     color: #FFF;
 }
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}  
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #23283D;
+    color: #fff;
+    text-align: center;
+    border-radius: 1vh;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+}
 body {
     background: #FFFFFF;
 }

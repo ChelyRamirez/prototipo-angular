@@ -8,6 +8,7 @@ import { Cliente } from '../../models/cliente';
 import { Bitacora } from '../../models/bitacora';
 import { User } from '../../models/empleado';
 import { GlobalService } from '../../services/global.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-asignacion',
@@ -15,6 +16,8 @@ import { GlobalService } from '../../services/global.service';
   styleUrls: ['./asignacion.component.css']
 })
 export class AsignacionComponent implements OnInit {
+
+  public rutaIMG = environment.RUTA_IMAGEN;
 
   clientelist: any = [];
 
