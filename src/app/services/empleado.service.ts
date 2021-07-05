@@ -17,4 +17,8 @@ export class EmpleadoService {
     return this.http.get(`${Commons.BASE_URL}obtenerVisitadores`);
   }
 
+  registrarCredito(data): Observable<any> {
+    return this.http.post(`${Commons.BASE_URL}credito`, data);
+  }
+
 }

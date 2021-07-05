@@ -55,8 +55,8 @@ export class SolicitudComponent implements OnInit {
   }
 
 
-  registrar(){
-    if(this.verificar() === 1){
+  async registrar(){
+    if(this.verificar() !== 0){
       this.cliente.registrarCliente(this.data).subscribe(
         res => {
           if( !res.ok ) {
@@ -78,11 +78,6 @@ export class SolicitudComponent implements OnInit {
         err => console.log(err)
         );
     }
-    return Swal.fire({
-      icon: 'error',
-      title: '¡ERROR!',
-      text: 'Debe llenar todos los campos'
-    });
   }
 
   restablecer(){
