@@ -20,6 +20,7 @@ export class AprobacionComponent implements OnInit {
   public longitud: number = null;
   public foto: string = null;
   public comen: string = null;
+  public firma: string = null;
   clientelist: any = [];
   private clientes: any;
   data = {
@@ -83,10 +84,11 @@ export class AprobacionComponent implements OnInit {
     return this.direccion = `${calle} #${numext}, ${colonia}, ${codigopostal},${ciudad},${estado}`;
   }
 
-  resto(latitud: number, longitud: number, foto: string, comen: string){
+  resto(latitud: number, longitud: number, foto: string, comen: string, firma: string){
     this.latitud = latitud;
     this.longitud = longitud;
     this.foto = `data:image/jpg;base64,${foto}`;
+    this.firma = `data:image/jpg;base64,${firma}`;
     this.comen = comen;
   }
 

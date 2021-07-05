@@ -74,15 +74,8 @@ export class SolicitudComponent implements OnInit {
     let behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(this.map))
     let ui = H.ui.UI.createDefault(this.map, this.defaultLayers);    
   }
-<<<<<<< HEAD
-
-
-  async registrar(){
-    if(this.verificar() !== 0){
-=======
   registrar(){
     if(this.verificar() === 1){
->>>>>>> 61c0e80fd90221915d870cd0d95943d417e28ae0
       this.cliente.registrarCliente(this.data).subscribe(
         res => {
           if( !res.ok ) {
