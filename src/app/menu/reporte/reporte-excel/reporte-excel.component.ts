@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GlobalService } from '../../../services/global.service';
 import { Router } from '@angular/router';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-reporte-excel',
@@ -9,9 +9,7 @@ import { environment } from 'src/environments/environment.prod';
   styleUrls: ['./reporte-excel.component.css']
 })
 export class ReporteExcelComponent implements OnInit {
-
-  public rutaIMG = environment.IMG;
-
+  public rutaIMG = environment.RUTA_IMAGEN;
   constructor(
     private global: GlobalService,
     private router: Router

@@ -3,27 +3,27 @@
         <img [src]="rutaIMG + '/icono2.png'">
         <div class="but">
             <form action="menu">
-                
-                <a href="/reportes"><img [src]="rutaIMG + '/menu.png'"/></a>
+
+                <a href="/Prototipo_web/#/reportes"><img [src]="rutaIMG + '/menu.png'" /></a>
             </form>
         </div>
     </div>
 </header>
+
 <body>
     <div class="menu-form">
-        <div class="container">           
+        <div class="container">
             <div class="img">
                 <h1>GENERANDO REPORTE PDF</h1>
                 <img [src]="rutaIMG + '/cargando1.gif'">
                 <h2>ESPERE UN MOMENTO...</h2>
             </div>
-               <script [src]="bundle.js"></script>
-           <script type="text/javascript">
-               $(window).load(function() {
-                   $(".loader").fadeOut("slow");
-               });
-               </script>
+            <script src="bundle.js"></script>
+            <script type="text/javascript">
+                $(window).load(function() {
+                    $(".loader").fadeOut("slow");
+                });
+            </script>
         </div>
     </div>
 </body>
-

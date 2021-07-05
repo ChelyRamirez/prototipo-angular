@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-consulta',
@@ -7,8 +7,8 @@ import { environment } from 'src/environments/environment.prod';
   styleUrls: ['./consulta.component.css']
 })
 export class ConsultaComponent implements OnInit {
+  public rutaIMG = environment.RUTA_IMAGEN;
 
-public rutaIMG = environment.IMG;
 
   constructor() { }
 

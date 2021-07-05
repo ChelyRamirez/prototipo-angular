@@ -4,7 +4,7 @@ import { Bitacora } from '../../models/bitacora';
 import { LoginService } from '../../services/login.service';
 import { User } from '../../models/empleado';
 import { GlobalService } from '../../services/global.service';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -14,9 +14,7 @@ import { environment } from 'src/environments/environment.prod';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-
-  public rutaIMG = environment.IMG;
-
+  public rutaIMG = environment.RUTA_IMAGEN;
   bit: Bitacora = {
     modulo: 'Login',
     accion: 'Cierre Sesion',

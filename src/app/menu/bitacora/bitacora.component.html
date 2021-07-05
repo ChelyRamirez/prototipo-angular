@@ -3,17 +3,18 @@
         <img [src]="rutaIMG + '/icono2.png'">
         <div class="but">
             <form action="menu">
-                <a href="/menu"><img [src]="rutaIMG + '/menu.png'"/></a>
+                <a href="/Prototipo_web/#/menu"><img [src]="rutaIMG + '/menu.png'" /></a>
             </form>
         </div>
     </div>
 </header>
+
 <body>
     <h2 class="title">BITÁCORA</h2>
     <br>
     <div id="contendor">
         <div id="tabla1">
-            <table style="border: solid 0px"> 
+            <table style="border: solid 0px">
                 <thead>
                     <tr>
                         <th style="background-color: #23283D; color: #fff; border: solid 1px #000000; border-radius: 10px;">idEmpleado</th>
@@ -22,13 +23,16 @@
                         <th style="background-color: #23283D; color: #fff; border: solid 1px #000000; border-radius: 10px;">Fecha</th>
                     </tr>
                 </thead>
-                <tbody >
-                    <tr *ngFor="let bitacora of registros"> 
-                        <td style="height:40px;">{{bitacora.idempleado}}</td>  <td>{{bitacora.modulo}}</td> <td>{{bitacora.accion}}</td> <td>{{bitacora.fecha}}</td>
+                <tbody>
+                    <tr *ngFor="let bitacora of registros">
+                        <td style="height:40px;">{{bitacora.idempleado}}</td>
+                        <td>{{bitacora.modulo}}</td>
+                        <td>{{bitacora.accion}}</td>
+                        <td>{{bitacora.fecha}}</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
-   
+
 </body>

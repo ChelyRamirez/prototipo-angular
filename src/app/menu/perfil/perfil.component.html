@@ -3,11 +3,12 @@
         <img [src]="rutaIMG + '/icono2.png'">
         <div class="but">
             <form action="menu">
-                <a href="/menu"><img [src]="rutaIMG + '/menu.png'"/></a>
+                <a href="Prototipo_web/#/menu"><img [src]="rutaIMG + '/menu.png'"/></a>
             </form>
         </div>
     </div>
 </header>
+
 <body>
     <h2 class="title">MI PERFIL</h2>
     <div class="user-form">
@@ -15,20 +16,21 @@
             <label>Nombre: </label><br><input type="text" name="nombre" id="nombre" required>
             <br><label>Domicilio:</label><br><input type="email" name="correo" id="correo" required>
             <br><label>Telefóno:</label><br><input type="tel" name="telefono" id="telefono" required>
-            <br><h4 class="title1">GEO CRÉDITOS</h4>
+            <br>
+            <h4 class="title1">GEO CRÉDITOS</h4>
             <br><label>Foto de perfil:</label><input type="file" id="foto" name="foto" style="height: 40px;" required>
             <div class="botonVerde">
                 <input type="button" value="GUARDAR" name="sesion" OnClick="location.href=''">
             </div>
-        </div>    
+        </div>
         <div class="foto">
-            <img src="../../../assets/img/foto.png" alt="perfil">
+            <img [src]="rutaIMG + '/foto.png'" alt="perfil">
         </div>
         <div class="botonAzul">
-            <input type="button" value="REGRESAR A MENÚ" name="menu" OnClick="location.href='/menu'">
+            <input type="button" value="REGRESAR A MENÚ" name="menu" OnClick="location.href='/Prototipo_web/#/menu'">
         </div>
         <div class="botonGris">
-            <br><input type="button" value="CERRAR SESIÓN" name="sesion" OnClick="location.href=''">
+            <br><input type="button" value="CERRAR SESIÓN" name="sesion" OnClick="location.href='/Prototipo_web/#/menu'">
         </div>
     </div>
 </body>

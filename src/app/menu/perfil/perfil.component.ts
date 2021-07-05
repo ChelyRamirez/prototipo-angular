@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-perfil',
@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class PerfilComponent implements OnInit {
 
-  rutaIMG = environment.IMG;
+  public rutaIMG = environment.RUTA_IMAGEN;
 
   constructor() { }
 

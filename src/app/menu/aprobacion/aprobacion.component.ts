@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-aprobacion',
@@ -8,8 +8,8 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class AprobacionComponent implements OnInit {
 
-  public rutaIMG = environment.IMG;
-  
+  public rutaIMG = environment.RUTA_IMAGEN;
+
   constructor() { }
 
   ngOnInit(): void {

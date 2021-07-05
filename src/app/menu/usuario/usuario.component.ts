@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-usuario',
@@ -7,8 +7,7 @@ import { environment } from 'src/environments/environment.prod';
   styleUrls: ['./usuario.component.css']
 })
 export class UsuarioComponent implements OnInit {
-
-  public rutaIMG = environment.IMG;
+  public rutaIMG = environment.RUTA_IMAGEN;
   constructor() { }
 
   ngOnInit(): void {

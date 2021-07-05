@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GlobalService } from 'src/app/services/global.service';
 import { ReporteService } from 'src/app/services/reporte.service';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 import { Bitacora } from '../../../../models/bitacora';
 import { User } from '../../../../models/empleado';
@@ -12,9 +12,7 @@ import { User } from '../../../../models/empleado';
   styleUrls: ['./documento-pdf.component.css']
 })
 export class DocumentoPDFComponent implements OnInit {
-  
-  public rutaIMG = environment.IMG;
-  
+  public rutaIMG = environment.RUTA_IMAGEN;
   bit: Bitacora = {
     modulo: 'Reporte',
     accion: 'Creo un archivo PDF',

@@ -6,8 +6,10 @@ import { ClienteService } from '../../services/cliente.service';
 import { Bitacora } from '../../models/bitacora';
 import { User } from '../../models/empleado';
 import Swal from 'sweetalert2';
-import { environment } from 'src/environments/environment.prod';
 declare var H: any;
+import { environment } from '../../../environments/environment';
+
+
 @Component({
   selector: 'app-solicitud',
   templateUrl: './solicitud.component.html',
@@ -17,7 +19,7 @@ export class SolicitudComponent implements OnInit {
   private platform: any;
   private map: any;
   private defaultLayers: any;
-  public rutaIMG = environment.IMG;
+  public rutaIMG = environment.RUTA_IMAGEN;
   data: Cliente = {
     nombrePersona: "",
     apPaterno: "",
