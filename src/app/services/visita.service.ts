@@ -20,4 +20,8 @@ export class VisitaService {
     return this.http.post(`${Commons.BASE_URL}asignarVisita`, data)
   }
 
+  obtenerVisitasCompletas() {
+    return this.http.get(`${Commons.BASE_URL}obtenerVisitasCompletadas`);
+  }
+
 }

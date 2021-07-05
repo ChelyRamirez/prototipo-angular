@@ -195,11 +195,6 @@ export class SolicitudComponent implements OnInit {
         err => console.log(err)
         );
     }
-    return Swal.fire({
-      icon: 'error',
-      title: '¡ERROR!',
-      text: 'Debe llenar todos los campos'
-    });
   }
   restablecer(){
     this.data = {
