@@ -42,18 +42,21 @@
                 <fieldset>
                     <div #map class="mapa" id="map-container">
                         <!--Aquí va el mapa-->
-                        
-                        
+
                     </div>
                 </fieldset>
-                <br><fieldset class="foto">
+                <br><fieldset class="foto" style="height: 40vh;">
                     <!--Agregar tooltip a todo-->
-                    <div class="tooltip">
-                        <a href="foto-form.html"><img src="../../../assets/img/camara.png"></a>
-
-
-                        <span class="tooltiptext">Captura de fotografía de identificación oficial(INE)</span>
-                    </div>
+                        <!-- Stream video webcam -->
+                        <div class="video-wrap">
+                            <video id="video" playsinline autoplay></video>
+                        </div>                       
+                        <canvas id="canvas" width="500" height="250" class="fotografia"></canvas>
+                        <img [src]="imagen">
+                        <!-- Webcam video snapshot -->
+                        <div class="controller">
+                            <button id="snap"><img [src]="rutaIMG + '/camara.png'" (click)= "apagar()"></button>
+                        </div>
                 </fieldset> 
             </form>
         </div>

@@ -35,12 +35,30 @@
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     border-radius: 5px;
 }
+.video-wrap{
+    text-align: center;
+    
+}
+.controller button{
+    width: 10%;
+    border-radius: 60%;
+    border: solid 0px;
+    background-color: #FFF;
+    position: absolute;
+    top: 64.5%;
+    left: 87%;
+}
 .mapa{
     height: 70vh;
 }
-.foto{
-    height: 40vh;
+.fotografia{
+    position: absolute;
+    top: 64.5%;
+    left: 15%;
+    height: 250px;
+    width: 500px;
 }
+
 .title{
     color: #7E7E7E;
     font-family: Avenir-Next;

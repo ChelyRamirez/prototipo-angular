@@ -16,6 +16,9 @@ import { environment } from '../../../environments/environment';
   styleUrls: ['./solicitud.component.css']
 })
 export class SolicitudComponent implements OnInit {
+
+  public imagen:string;
+
   private platform: any;
   private map: any;
   private defaultLayers: any;
@@ -73,7 +76,102 @@ export class SolicitudComponent implements OnInit {
     window.addEventListener('resize', () => this.map.getViewPort().resize());
     let behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(this.map))
     let ui = H.ui.UI.createDefault(this.map, this.defaultLayers);    
-  }
+
+    this.encender();
+      }
+
+     apagar(){
+      //Captura de la webcam
+    'use strict';
+
+    const video = document.getElementById('video') as HTMLCanvasElement;
+    const canvas = document.getElementById('canvas') as HTMLCanvasElement;
+    const snap = document.getElementById("snap");
+    const errorMsgElement = document.querySelector('span#errorMsg');
+
+    const constraints = {
+      audio: false,
+      video:  {
+        width: 0, height: 0
+      }
+    };
+
+    // Acceso a la webcam
+    async function init() {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia(constraints);
+        handleSuccess(stream);
+      } catch (e) {
+        errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
+      }
+    }
+
+    // Success
+    function handleSuccess(stream) {
+      window.MSStream = null;
+      video.srcObject = null;
+    }
+
+    // Load init
+    init();
+
+     var context = canvas.getContext('2d');
+    snap.addEventListener("click", () => {
+
+            context.drawImage(video, 0, 0, 500, 250);
+            var dataURL = canvas.toDataURL("image/png");
+            this.imagen = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+          });
+
+    
+
+     }
+
+
+
+
+
+
+
+     encender(){
+       //Captura de la webcam
+    'use strict';
+
+    const video = document.getElementById('video');
+    const canvas = document.getElementById('canvas');
+    const snap = document.getElementById("snap");
+    const errorMsgElement = document.querySelector('span#errorMsg');
+
+    const constraints = {
+      audio: true,
+      video:  {
+        width: 500, height: 250
+      }
+    };
+
+    // Acceso a la webcam
+    async function init() {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia(constraints);
+        handleSuccess(stream);
+      } catch (e) {
+        errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
+      }
+    }
+
+    // Success
+    function handleSuccess(stream) {
+      window.MSStream = stream;
+      video.srcObject = stream;
+    }
+
+    // Load init
+    init();
+
+    // Dibujar imagen
+    
+     }
+      
   registrar(){
     if(this.verificar() === 1){
       this.cliente.registrarCliente(this.data).subscribe(
