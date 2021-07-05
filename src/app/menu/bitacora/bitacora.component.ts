@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment.prod';
 import { GlobalService } from '../../services/global.service';
 
 @Component({
@@ -7,6 +8,8 @@ import { GlobalService } from '../../services/global.service';
   styleUrls: ['./bitacora.component.css']
 })
 export class BitacoraComponent implements OnInit {
+  
+  public rutaIMG = environment.IMG;
   
   bit: any = [];
   public registros; 

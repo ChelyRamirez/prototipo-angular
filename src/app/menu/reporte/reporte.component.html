@@ -1,10 +1,10 @@
 
 <header>
     <div class="header">
-        <img src="../../../assets/img/icono2.png">
+        <img [src]="rutaIMG + '/icono2.png'">
         <div class="but">
-            <form>
-                <a href="/menu"><img src="../../../assets/img/menu.png"/></a>
+            <form action="menu">
+                <a href="/menu"><img [src]="rutaIMG + '/menu.png'"/></a>
             </form>
         </div>
     </div>
@@ -14,8 +14,8 @@
         <div>
             <h3 class="title">GENERA TU REPORTE</h3>
             <div class="menus"></div>
-            <a href="/reporteExcel"><img src="../../../assets/img/doc.png"></a>&nbsp;
-            <a href="/reportePDF"><img src="../../../assets/img/pdf.png"></a>
+            <a href="/reporteExcel"><img [src]="rutaIMG + '/doc.png'"></a>&nbsp;
+            <a href="/reportePDF"><img [src]="rutaIMG + '/pdf.png'"></a>
         </div>
     </div>
 </body>

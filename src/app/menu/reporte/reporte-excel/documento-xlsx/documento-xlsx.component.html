@@ -1,10 +1,10 @@
 
 <header>
     <div class="header">
-        <img src="../../../../../assets/img/icono2.png">
+        <img [src]="rutaIMG + '/icono2.png'">
         <div class="but">
             <form action="menu">
-                <a href="/reportes"><img src="../../../../../assets/img/menu.png"/></a>
+                <a href="/reportes"><img [src]="rutaIMG + '/menu.png'"/></a>
             </form>
         </div>
     </div>
@@ -15,7 +15,7 @@
             <div class="loader">
                 <div class="img">
                     <h1>PROCESO EXITOSO</h1>
-                    <img src="../../../../../assets/img/bien.png">
+                    <img [src]="rutaIMG + '/bien.png'">
                     <div class="boton">
                         <br><input type="button" value="DESCARGAR" name="sesion" (click)="descargar()">
                     </div>
