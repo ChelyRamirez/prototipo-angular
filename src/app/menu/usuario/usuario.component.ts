@@ -8,6 +8,24 @@ import { environment } from '../../../environments/environment';
 })
 export class UsuarioComponent implements OnInit {
   public rutaIMG = environment.RUTA_IMAGEN;
+
+  data: any = {
+    nombrePersona: "",
+    apPaterno: "",
+    apMaterno: "",
+    username: "",
+    password: "",
+    puesto: "",
+    estado: "",
+    ciudad: "",
+    codigoPostal: "",
+    colonia: "",
+    calle: "",
+    numExt: "",
+    numInt: "",
+    latitud: "",
+    longitud: ""
+  } 
   constructor() { }
 
   ngOnInit(): void {
