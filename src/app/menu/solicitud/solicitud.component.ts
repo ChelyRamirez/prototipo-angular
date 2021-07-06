@@ -84,7 +84,7 @@ export class SolicitudComponent implements OnInit {
       //Captura de la webcam
     'use strict';
 
-    const video = document.getElementById('video') as HTMLCanvasElement;
+    const video = document.getElementById('video') as HTMLMediaElement;
     const canvas = document.getElementById('canvas') as HTMLCanvasElement;
     const snap = document.getElementById("snap");
     const errorMsgElement = document.querySelector('span#errorMsg');
@@ -117,8 +117,8 @@ export class SolicitudComponent implements OnInit {
 
     var context = canvas.getContext('2d');
     snap.addEventListener("click", () => {
-
-            context.drawImage(video, 0, 0, 500, 250);
+            var i = video;
+            context.drawImage(i as unknown as HTMLCanvasElement, 0, 0, 500, 250);
             var dataURL = canvas.toDataURL("image/jpeg", 0.75);
             this.imagen = dataURL.replace(/^data:image\/jpeg;base64,/, "");
             this.imagen 
@@ -138,7 +138,7 @@ export class SolicitudComponent implements OnInit {
        //Captura de la webcam
     'use strict';
 
-    const video = document.getElementById('video') as HTMLCanvasElement;
+    const video = document.getElementById('video') as HTMLMediaElement;
     var canvas = document.getElementById('canvas') as HTMLCanvasElement;
     const snap = document.getElementById("snap");
     const errorMsgElement = document.querySelector('span#errorMsg');

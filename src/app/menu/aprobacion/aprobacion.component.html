@@ -21,7 +21,7 @@
                     </tr>
                     <tr *ngFor=" let cliente of clientelist" (click)="llenarcampos(cliente.nombrepersona,cliente.appaterno, cliente.apmaterno, cliente.idcliente)"
                     (click)="domicilio(cliente.calle,cliente.numext,cliente.numint,cliente.colonia,cliente.codigopostal,cliente.ciudad,cliente.estado)"
-                    (click)="resto(cliente.latitud, cliente.longitud, cliente.fotocasa, cliente.comentariovisitante, cliente.firma)"
+                    (click)="resto(cliente.latitud, cliente.longitud, cliente.fotocasa, cliente.comentariovisitante, cliente.firma, cliente.fotoine)"
                     >
                         <td>{{cliente.nombrepersona}} {{cliente.appaterno}} {{cliente.apmaterno}}</td>
                         <td>{{cliente.calle}} #{{cliente.numext}} {{cliente.numint}},{{cliente.colonia}},{{cliente.codigopostal}},{{cliente.ciudad}},{{cliente.estado}}</td>
@@ -46,14 +46,20 @@
                     <br><textarea name="razon" rows="11" cols="70" disabled [value]="comen"></textarea>
                 </fieldset>
             </form>
-        </div>
-        
+        </div>        
         <div class="forma">
             <form action="foto-form">
                 <div class="casa">
-                    <label for="casa">Fotografía de la casa:</label>
+                    <div class="ine">
+                        <label for="ine">Fotografía del INE:</label>
                     <br>
-                    <img [src]="foto" width="400px" height="250px">
+                    <img [src]="fotoine" width="450px" height="250px">
+                    </div>
+                    <div class="casa">
+                        <label for="casa">Fotografía de la casa:</label>
+                    <br>
+                    <img [src]="foto" width="350px" height="250px">
+                    </div>
                 </div>
                 <br>
                 <div class="firma">
