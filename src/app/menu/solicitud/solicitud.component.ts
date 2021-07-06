@@ -115,12 +115,13 @@ export class SolicitudComponent implements OnInit {
     // Load init
     init();
 
-     var context = canvas.getContext('2d');
+    var context = canvas.getContext('2d');
     snap.addEventListener("click", () => {
 
             context.drawImage(video, 0, 0, 500, 250);
-            var dataURL = canvas.toDataURL("image/png");
-            this.imagen = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+            var dataURL = canvas.toDataURL("image/jpeg", 0.75);
+            this.imagen = dataURL.replace(/^data:image\/jpeg;base64,/, "");
+            this.imagen 
           });
 
     
@@ -137,11 +138,11 @@ export class SolicitudComponent implements OnInit {
        //Captura de la webcam
     'use strict';
 
-    const video = document.getElementById('video');
-    const canvas = document.getElementById('canvas');
+    const video = document.getElementById('video') as HTMLCanvasElement;
+    var canvas = document.getElementById('canvas') as HTMLCanvasElement;
     const snap = document.getElementById("snap");
     const errorMsgElement = document.querySelector('span#errorMsg');
-
+    canvas.width=canvas.width;
     const constraints = {
       audio: true,
       video:  {
@@ -174,6 +175,7 @@ export class SolicitudComponent implements OnInit {
       
   registrar(){
     if(this.verificar() === 1){
+      this.data.fotoINE = this.imagen;
       this.cliente.registrarCliente(this.data).subscribe(
         res => {
           if( !res.ok ) {
@@ -187,7 +189,8 @@ export class SolicitudComponent implements OnInit {
                 title: '¡CORRECTO!',
                 text: 'Se ha guardado la solicitud'
               });
-              return this.restablecer();     
+               this.restablecer();   
+               return this.encender();  
             },
             err => console.log(err)
           )
@@ -232,7 +235,16 @@ export class SolicitudComponent implements OnInit {
                         if(this.data.colonia !== null){
                           if(this.data.calle !== null){
                             if(this.data.numExt !== null){
-                              return 1;
+                              if(this.data.fotoINE !== null){
+                                return 1;
+                              } else {
+                                Swal.fire({
+                                  icon: 'error',
+                                  title: '¡ERROR!',
+                                  text: 'Debe tomar una imagen'
+                                });
+                                return 0;
+                              }
                             } else {
                               Swal.fire({
                                 icon: 'error',
