@@ -1,13 +1,14 @@
 <header>
     <div class="header">
-        <img src="../../../assets/img/icono2.png" class="imagen">
+        <img [src]="rutaIMG + '/icono2.png'" class="imagen">
         <div class="but">
             <form action="menu">
-                <a (click)="logout()" ><img src="../../../assets/img/salida.png"/></a>
+                <a (click)="logout()"><img [src]="rutaIMG + '/salida.png'" /></a>
             </form>
         </div>
     </div>
 </header>
+
 <body>
     <div contenedor>
         <div class="menu-page">
@@ -15,14 +16,31 @@
                 <H4>MENÚ</H4>
                 <form class="menu-form">
                     <div class="menus">
-                        <a href="/solicitudCredito"> <img src="../../../assets/img/solicitud.png"></a>&nbsp;
-                        <a href="/asignarVisita"><img src="../../../assets/img/asignacion.png"></a>&nbsp;
-                        <a href="/aprobarCredito"><img src="../../../assets/img/aprobacion.png"></a>&nbsp;
-                        <a href="/usuario"><img src="../../../assets/img/usuarios.PNG"></a><br>
-                        <br><a href="/consulta"><img src="../../../assets/img/consulta.PNG"></a>&nbsp;
-                        <a href="/bitacora"><img src="../../../assets/img/bitacora.PNG"></a>&nbsp;
-                        <a href="/reportes"><img src="../../../assets/img/reportes.PNG"></a>&nbsp;
-                        <a  href="/perfil"><img src="../../../assets/img/perfil.png"></a>
+                        <a href="/Prototipo_web/#/solicitudCredito">
+                            <img [src]="rutaIMG + '/solicitud.png'" class="logo" />
+                        </a>&nbsp;
+                        <a href="/Prototipo_web/#/asignarVisita">
+                            <img [src]="rutaIMG + '/asignacion.png'">
+                        </a>&nbsp;
+                        <a href="/Prototipo_web/#/aprobarCredito">
+                            <img [src]="rutaIMG + '/aprobacion.png'">
+                        </a>&nbsp;
+                        <a href="/Prototipo_web/#/usuario">
+                            <img [src]="rutaIMG + '/usuarios.PNG'">
+                        </a><br>
+                        <br>
+                        <a href="/Prototipo_web/#/consulta">
+                            <img [src]="rutaIMG + '/consulta.PNG'">
+                        </a>&nbsp;
+                        <a href="/Prototipo_web/#/bitacora">
+                            <img [src]="rutaIMG + '/bitacora.PNG'">
+                        </a>&nbsp;
+                        <a href="/Prototipo_web/#/reportes">
+                            <img [src]="rutaIMG + '/reportes.PNG'">
+                        </a>&nbsp;
+                        <a href="/Prototipo_web/#/perfil">
+                            <img [src]="rutaIMG + '/perfil.png'">
+                        </a>
                     </div>
                 </form>
             </div>

@@ -1,5 +1,5 @@
-import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Injectable, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { Routes, RouterModule, RouteReuseStrategy, ActivatedRouteSnapshot, DetachedRouteHandle } from '@angular/router';
 import { CargaComponent } from './carga/carga.component';
 import { LoginComponent } from './login/login.component';
 import { AprobacionComponent } from './menu/aprobacion/aprobacion.component';
@@ -16,6 +16,23 @@ import { HereMapComponent } from './menu/solicitud/here-map/here-map.component';
 import { SolicitudComponent } from './menu/solicitud/solicitud.component';
 import { UsuarioComponent } from './menu/usuario/usuario.component';
 import { MenuComponent } from './menu/inicio/menu.component';
+
+@Injectable()
+export class MyStrategy extends RouteReuseStrategy {
+   shouldDetach(route: ActivatedRouteSnapshot): boolean {
+    return false;
+  }
+  store(route: ActivatedRouteSnapshot, detachedTree: DetachedRouteHandle): void {}
+  shouldAttach(route: ActivatedRouteSnapshot): boolean {
+    return false;
+  }
+  retrieve(route: ActivatedRouteSnapshot): DetachedRouteHandle|null {
+    return null;
+  }
+  shouldReuseRoute(future: ActivatedRouteSnapshot, curr: ActivatedRouteSnapshot): boolean {
+    return false;
+  }
+}
 
 const routes: Routes = [
   {path: "", redirectTo: "/home", pathMatch: "full"},
@@ -38,7 +55,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, {useHash: true, onSameUrlNavigation: 'reload'})],
+  exports: [RouterModule],
+  providers: [{
+    provide: RouteReuseStrategy, useClass: MyStrategy
+  }]
 })
 export class AppRoutingModule { }

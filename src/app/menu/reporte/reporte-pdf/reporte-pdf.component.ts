@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GlobalService } from '../../../services/global.service';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-reporte-pdf',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./reporte-pdf.component.css']
 })
 export class ReportePDFComponent implements OnInit {
-
+  public rutaIMG = environment.RUTA_IMAGEN;
   constructor(
     private global: GlobalService,
     private router: Router

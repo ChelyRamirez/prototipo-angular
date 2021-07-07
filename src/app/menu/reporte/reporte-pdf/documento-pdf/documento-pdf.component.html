@@ -1,31 +1,30 @@
-
 <header>
     <div class="header">
-        <img src="../../../../../assets/img/icono2.png">
+        <img [src]="rutaIMG + '/icono2.png'">
         <div class="but">
             <form action="menu">
-                <a href="/reportes"><img src="../../../../../assets/img/menu.png"/></a>
+                <a href="/Prototipo_web/#/reportes"><img [src]="rutaIMG + '/menu.png'" /></a>
             </form>
         </div>
     </div>
 </header>
+
 <body>
     <div class="menu-form">
         <div class="container">
             <div class="loader">
                 <div class="img">
                     <h1>PROCESO EXITOSO</h1>
-                    <img src="../../../../../assets/img/bien.png">
+                    <img [src]="rutaIMG + '/bien.png'">
                     <div class="boton">
                         <form (ngSubmit)="descargar()">
-                            <br><input type="submit" value="DESCARGAR" name="sesion" >
+                            <br><input type="submit" value="DESCARGAR" name="sesion">
                         </form>
                     </div>
                 </div>
             </div>
             <!--img src="../../../../../assets/img/bien.png"-->
-            
+
         </div>
     </div>
 </body>
-

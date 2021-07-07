@@ -6,10 +6,10 @@ export interface Cliente {
     apPaterno: string;
     apMaterno: string;
     fotoINE?: string;
-    telefono: string;
+    telefono?: string;
     sueldo?: number;
-    empresa: string;
-    antiguedad: string;
+    empresa?: string;
+    antiguedad?: string;
     pagoMax: number;
     estado?: string;
     ciudad?: string;
@@ -25,3 +25,4 @@ export interface Cliente {
     firma?: string;
     comentariovisitante?: string;
 }
+
