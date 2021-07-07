@@ -42,7 +42,7 @@ export class MenuComponent implements OnInit {
         this.bitacora.registrarBitacora(this.bit).subscribe(
           res => {
               localStorage.removeItem('usuario');
-              return this.router.navigate(['/home']);
+              return this.router.navigate(['/']);
           },
           err => console.log(err)
         );

@@ -30,9 +30,9 @@ export class AprobacionComponent implements OnInit {
   }
 
   clientesel: any = {
-    nombre: '',
-    app: '',
-    apm: '',
+    nombre: "",
+    app: "",
+    apm: "",
   }
 
   bit: Bitacora = {
@@ -118,6 +118,7 @@ export class AprobacionComponent implements OnInit {
                 title: '¡CORRECTO!',
                 text: 'Se ha aprobado el credito'
               });
+              this.limpiar();
               return this.obtenerClientes();
             },
             err => {
@@ -152,6 +153,7 @@ export class AprobacionComponent implements OnInit {
                 title: '¡Accion Realizada!',
                 text: 'Se ha rechazado el credito'
               });
+              this.limpiar();
               return this.obtenerClientes();
             },
             err => {
@@ -160,6 +162,7 @@ export class AprobacionComponent implements OnInit {
                 title: '¡ALGO SALIO MAL!',
                 text: 'Algo salio mal'
               });
+              
               return console.log(err);
             }
           )
@@ -181,6 +184,21 @@ export class AprobacionComponent implements OnInit {
       });
     }
     
+  }
+
+  limpiar(){
+    this.direccion = null;
+    this.latitud = null;
+    this.longitud = null;
+    this.foto = null;
+    this.comen = null;
+    this.firma = null;
+    this.fotoine = null;
+    this.data.credito = null;
+    this.data.idCliente = null;
+    this.clientesel.nombre = "";
+    this.clientesel.app = "";
+    this.clientesel.apm = "";
   }
 
 }
