@@ -14,18 +14,14 @@
     <div container>
         <div class="logo-image"></div>
         <div class="form">
-            <form action="aprobacion-form.html" class="formulario">
+            <form (ngSubmit)="guardar()">
                 <fieldset><br>
-                    <br><input style="width: 32%;" type="text" name="nombre" class="form-input" placeholder="Nombre(s)" required [(ngModel)]='data.nombrePersona' />&nbsp;
+                    <input style="width: 32%;" type="text" name="nombre" class="form-input" placeholder="Nombre(s)" required [(ngModel)]='data.nombrePersona' />&nbsp;
                     <input style="width: 30%;" type="text" name="apellidoPaterno" class="form-input" placeholder="Apellido Paterno" required [(ngModel)]='data.apPaterno' />&nbsp;
                     <input style="width: 30%;" type="text" name="apellidoMaterno" class="form-input" placeholder="Apellido Materno" required [(ngModel)]='data.apMaterno' />
-                    <input type="text" name="usuario" class="form-input" placeholder="Usuario/Correo Electrónico" required [(ngModel)]='data.usuario' />
-                    <input type="text" name="contrasenia" class="form-input" placeholder="Contraseña" required [(ngModel)]='data.contrasenia' />
-                    <input type="text" name="telefono" class="form-input" placeholder="Teléfono" required [(ngModel)]='data.telefono' />
-                    <input type="text" name="empresa" class="form-input" placeholder="Empresa" required [(ngModel)]='data.empresa' />
-                    <br><input style="width: 47%;" type="number" name="sueldo" class="form-input" placeholder="Sueldo $" required [(ngModel)]='data.sueldo' />&nbsp;
-                    <input style="width: 47%;" type="text" name="monto" class="form-input" placeholder="Monto a pagar $" required [(ngModel)]='data.pagoMax' />
-                    <br><input type="text" name="anti" class="form-input" placeholder="Antigüedad en la empresa" required [(ngModel)]='data.antiguedad' />
+                    <input type="text" name="username" class="form-input" placeholder="Usuario/Correo Electrónico" required [(ngModel)]='data.username' />
+                    <input type="text" name="password" class="form-input" placeholder="Contraseña" required [(ngModel)]='data.password' />
+                    <input type="text" name="puesto" class="form-input" placeholder="Puesto" required [(ngModel)]='data.puesto' />
                     <br><input type="text" name="estado" class="form-input" placeholder="Estado" required [(ngModel)]='data.estado' />
                     <br><input type="text" name="ciudad" class="form-input" placeholder="Ciudad" required [(ngModel)]='data.ciudad' />
                     <br><input type="text" name="colonia" class="form-input" placeholder="Colonia" required [(ngModel)]='data.colonia' />
@@ -35,12 +31,7 @@
                     <input style="width: 47%;" type="text" name="numInt" class="form-input" placeholder="Núm. Int" required [(ngModel)]='data.numInt' />
                     <br><input style="width: 47%;" type="text" name="latitud" class="form-input" placeholder="Latidud" required [(ngModel)]='data.latitud' />&nbsp;
                     <input style="width: 47%;" type="text" name="longitud" class="form-input" placeholder="Longitud" required [(ngModel)]='data.longitud' />
-                    <select class="combobox">
-                        <option value="supervisor" required [(ngModel)]='data.puesto'>Supervisor</option>
-                        <option value="validador" requerid [(ngModel)]='data.puesto'>Validador</option>
-                        <option value="visitador" required [(ngModel)]='data.puesto'>Visitador</option>
-                    </select>
-                    <br><br><br><br><br><br><br><br><input type="button" class="button" style="background-color: #23283D; padding-top: 1%;" value="CREAR" name="guardar" OnClick="location.href='crearUs.html' ">
+                    <br><input name="submit" type="submit" class="button" style="background-color: #23283D; padding-top: 1%;" value="CREAR">
                 </fieldset>
             </form>
         </div>
@@ -52,9 +43,9 @@
                             <th style="background-color: #23283D; color: #FFF; border-radius: 10px; height: 30px;">Usuarios</th>
                             <th style="background-color: #23283D; color: #FFF; border-radius: 10px;">Tipo</th>
                         </tr>
-                        <tr>
-                            <td style="height:40px;">Araceli Ramírez</td>
-                            <td>Supervisor</td>
+                        <tr *ngFor = "let empleado of empleados">
+                            <td style="height:40px;">{{empleado.nombrepersona}}</td>
+                            <td>{{empleado.puesto}}</td>
                             <tr>
                     </table>
                 </fieldset>

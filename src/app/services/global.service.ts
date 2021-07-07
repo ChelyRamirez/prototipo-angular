@@ -10,6 +10,7 @@ import { Bitacora } from '../models/bitacora';
   providedIn: 'root'
 })
 export class GlobalService {
+  idEmpleado: any;
 
   constructor(private http: HttpClient) { }
 
