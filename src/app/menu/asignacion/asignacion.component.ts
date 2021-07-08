@@ -23,7 +23,7 @@ export class AsignacionComponent implements OnInit {
 
   empleadolist: any [];
   cliente: Cliente = {
-    nombrePersona: "cliente seleccionado",
+    nombrePersona: "Cliente seleccionado",
     apPaterno: "",
     apMaterno: "",
     telefono: '',
@@ -36,7 +36,7 @@ export class AsignacionComponent implements OnInit {
     idCliente: null,
   }
   empleadose: any = {
-    nombre: "empleado seleccionado",
+    nombre: "Empleado seleccionado",
     app: "",
     apm: ""
   }

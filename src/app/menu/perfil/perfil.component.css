@@ -19,7 +19,7 @@
 .user-form {
     font-family: Avenir-Next;
     background: #FFFFFF;
-    height: 70vh;
+    height: 72vh;
     width: 70%;
     margin: 0 auto 0px;
     padding: 1%;
@@ -28,7 +28,7 @@
 }  
 .foto {
   padding-top: 2vh;
-  padding-left: 30vh;
+  padding-left: 35vh;
 }
 .form {
   float: left;
@@ -37,6 +37,7 @@
   margin: 0%;
   padding: 0%;
   color: #7E7E7E;
+  padding-left: 5%;
 }
 .form2 {
   padding-left: 43%;
@@ -55,6 +56,7 @@
   box-sizing: border-box;
   font-size: 100%;
   border-radius: 1vh;
+  height: 5vh;
 }
 .botonGris{
   width: 100px;
