@@ -8,21 +8,20 @@ import { User } from '../../models/empleado';
 import Swal from 'sweetalert2';
 declare var H: any;
 import { environment } from '../../../environments/environment';
-
-
 @Component({
   selector: 'app-solicitud',
   templateUrl: './solicitud.component.html',
   styleUrls: ['./solicitud.component.css']
 })
 export class SolicitudComponent implements OnInit {
-
   public imagen:string;
-
   private platform: any;
   private map: any;
   private defaultLayers: any;
   public rutaIMG = environment.RUTA_IMAGEN;
+  public longitud: number;
+  public latitude: number;
+  public markerCl: any;
   data: Cliente = {
     nombrePersona: "",
     apPaterno: "",
@@ -49,19 +48,17 @@ export class SolicitudComponent implements OnInit {
     idEmpleado: 0
   }
   log: User = JSON.parse(localStorage.getItem('usuario'));
-  markerCl: any;
-  puntosLayer: any;
-  
+  puntosLayer: any;  
   constructor(
     private cliente: ClienteService,
     private bitacora: GlobalService,
     private router: Router
-  ) { 
+  ) {     
     this.platform = new H.service.Platform({
       "apikey": "Ib2YJfQW-Ak3OnSVB5943IkDnFavxZKnbv6euTs6Mz8"
     });
   }
-  ngOnInit(): void {
+  ngOnInit(): void {   
     const divMapCl = document.getElementById("map-container")
     this.defaultLayers = this.platform.createDefaultLayers();
     this.map = new H.Map(
@@ -72,30 +69,41 @@ export class SolicitudComponent implements OnInit {
         pixelRatio: window.devicePixelRatio || 1,
       }
     );
-    
+    this.gestionMarcadores();
     window.addEventListener('resize', () => this.map.getViewPort().resize());
     let behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(this.map))
     let ui = H.ui.UI.createDefault(this.map, this.defaultLayers);    
-
     this.encender();
-      }
-
+    }
+    gestionMarcadores(){
+      //var icon = new H.map.Icon('Vector.png');
+      let coords = null; 
+      this.map.addEventListener('tap', (evt) => {
+        coords = this.map.screenToGeo(evt.currentPointer.viewportX, evt.currentPointer.viewportY);
+        console.log(coords);
+        if (this.markerCl != null){
+          this.map.removeObject(this.markerCl);
+        }
+        this.markerCl = new H.map.Marker({ lat: coords.lat, lng: coords.lng });
+        this.map.addObject(this.markerCl);  
+        this.longitud = coords.lng;
+        this.latitude = coords.lat; 
+        console.log(this.markerCl);
+      });
+    }
      apagar(){
       //Captura de la webcam
     'use strict';
-
     const video = document.getElementById('video') as HTMLMediaElement;
     const canvas = document.getElementById('canvas') as HTMLCanvasElement;
     const snap = document.getElementById("snap");
     const errorMsgElement = document.querySelector('span#errorMsg');
-
     const constraints = {
       audio: false,
       video:  {
         width: 0, height: 0
       }
     };
-
     // Acceso a la webcam
     async function init() {
       try {
@@ -105,16 +113,13 @@ export class SolicitudComponent implements OnInit {
         errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
       }
     }
-
     // Success
     function handleSuccess(stream) {
       window.MSStream = null;
       video.srcObject = null;
     }
-
     // Load init
     init();
-
     var context = canvas.getContext('2d');
     snap.addEventListener("click", () => {
             var i = video;
@@ -123,33 +128,20 @@ export class SolicitudComponent implements OnInit {
             this.imagen = dataURL.replace(/^data:image\/jpeg;base64,/, "");
             this.imagen 
           });
-
-    
-
      }
-
-
-
-
-
-
-
      encender(){
        //Captura de la webcam
     'use strict';
-
     const video = document.getElementById('video') as HTMLMediaElement;
     var canvas = document.getElementById('canvas') as HTMLCanvasElement;
-    const snap = document.getElementById("snap");
     const errorMsgElement = document.querySelector('span#errorMsg');
-    canvas.width=canvas.width;
+    canvas.width=canvas.width;    
     const constraints = {
-      audio: true,
+      audio: false,
       video:  {
         width: 500, height: 250
       }
     };
-
     // Acceso a la webcam
     async function init() {
       try {
@@ -159,20 +151,14 @@ export class SolicitudComponent implements OnInit {
         errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
       }
     }
-
     // Success
     function handleSuccess(stream) {
       window.MSStream = stream;
       video.srcObject = stream;
     }
-
     // Load init
-    init();
-
-    // Dibujar imagen
-    
-     }
-      
+    init();   
+     }      
   registrar(){
     if(this.verificar() === 1){
       this.data.fotoINE = this.imagen;
