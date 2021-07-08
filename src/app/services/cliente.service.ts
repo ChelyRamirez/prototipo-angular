@@ -18,7 +18,7 @@ export class ClienteService {
   }
 
   obtenerClientes(): Observable<any> {
-    return this.http.get(`${Commons.BASE_URL}obtenerClientes`,);
+    return this.http.get(`${Commons.BASE_URL}obtenerClientes`);
   }
 
 }

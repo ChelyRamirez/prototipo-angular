@@ -10,9 +10,13 @@ export class ConsultaComponent implements OnInit {
   public rutaIMG = environment.RUTA_IMAGEN;
 
 
-  constructor() { }
+  constructor(
+    
+  ) { }
 
   ngOnInit(): void {
   }
 
+  verClientes(){
+ }
 }
