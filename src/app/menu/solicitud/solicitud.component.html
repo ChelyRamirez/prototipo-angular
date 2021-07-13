@@ -15,7 +15,7 @@
         <div class="form">
             <form (ngSubmit)="registrar()">
                 <fieldset>
-                    <br><input style="width: 34.5%;" type="text" name="nombre" class="form-input" placeholder="Nombre(s)" required [(ngModel)]='data.nombrePersona' />&nbsp;
+                    <br><span title="Ingresa el nombre del cliente"><input style="width: 34.5%;" type="text" name="nombre" class="form-input" placeholder="Nombre(s)"  required [(ngModel)]='data.nombrePersona' /></span>&nbsp;
                     <input style="width: 31%;" type="text" name="apellidoPaterno" class="form-input" placeholder="Apellido Paterno" required [(ngModel)]='data.apPaterno' />&nbsp;
                     <input style="width: 31%;" type="text" name="apellidoMaterno" class="form-input" placeholder="Apellido Materno" required [(ngModel)]='data.apMaterno' />
                     <input type="text" name="telefono" class="form-input" placeholder="Teléfono" required [(ngModel)]='data.telefono' />
