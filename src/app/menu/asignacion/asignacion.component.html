@@ -11,8 +11,8 @@
 
 <body>
     <h2 class="title">
-        <input type="text" name="clienteAsig" placeholder="Cliente seleccionado" class="CliAsi" [value]="cliente.nombrePersona + cliente.apPaterno + cliente.apMaterno"> ASIGNACIÓN DE VISITA
-        <input type="text" name="visitadorAsig" placeholder="Visitador seleccionado" class="VisAsi" [value]="empleadose.nombre + empleadose.app + empleadose.apm"></h2>
+        <input type="text" name="clienteAsig" placeholder="Cliente seleccionado" disabled class="CliAsi" [value]="cliente.nombrePersona + ' ' + cliente.apPaterno + ' '  + cliente.apMaterno"> ASIGNACIÓN DE VISITA
+        <input type="text" name="visitadorAsig" placeholder="Visitador seleccionado" disabled class="VisAsi" [value]="empleadose.nombre + ' ' + empleadose.app + ' '  + empleadose.apm"></h2>
     <div id="contenedor">
         <div id="tabla1">
             <fieldset>
@@ -38,17 +38,18 @@
             <fieldset>
                 <table>
                     <tr>
+                        <th>ID</th>
                         <th>Nombre</th>
                         <th>Status</th>
                     </tr>
                     <tr *ngFor="let empleado of empleadolist" (click)="asignarVisitador(empleado.idempleado, empleado.nombrepersona, empleado.appaterno, empleado.apmaterno)">
+                        <td>{{empleado.idempleado}}</td>
                         <td>{{empleado.nombrepersona}} {{empleado.appaterno}} {{empleado.apmaterno}}</td>
                         <td>Disponible</td>
-                        <tr>
-                            <td colspan="2"><input type="button" class="button" value="GUARDAR" (click)="asignarVisita()"></td>
-                        </tr>
                 </table>
+                
             </fieldset>
+            <br><input type="button" class="button" value="GUARDAR" (click)="asignarVisita()">
         </div>
     </div>
 </body>

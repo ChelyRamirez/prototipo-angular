@@ -3,12 +3,11 @@ body{
     text-align: center;
     background-color: #23283D;
     align-content: center;
-    padding: 7.3%;
+    padding-top: 13%;
     background-repeat: no-repeat;
-    height: 69.7vh;
+    height: 73.5vh;
     background-position: center;
 }
-
 .imagen{
    display: block;
    margin: auto;

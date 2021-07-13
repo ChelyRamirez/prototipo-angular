@@ -15,6 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './inicio/menu.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { HereMapComponent } from './solicitud/here-map/here-map.component';
+import { AppRoutingModule } from '../app-routing.module';
+import { FilterPipe, FilterPipeB } from '../pipes/filter.pipe';
 
 
 
@@ -31,15 +33,19 @@ import { HereMapComponent } from './solicitud/here-map/here-map.component';
     PerfilComponent,
     ReportePDFComponent,
     ReporteExcelComponent,
-    HereMapComponent
+    HereMapComponent,
+    FilterPipe,
+    FilterPipeB
   ],
   exports: [],
 
   imports: [
     BrowserModule,
     CommonModule,
+    AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    
   ]
 })
 export class MenuModule { }

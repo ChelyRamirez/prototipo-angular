@@ -5,25 +5,21 @@
 }
 .header{
     background: #23283D;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    box-shadow: 0 0 20vh 0 rgba(0, 0, 0, 0.2), 0 1vh 1vh 0 rgba(0, 0, 0, 0.24);
 }
 .but{
     float: right;
     padding: 1vh;
     background-repeat: no-repeat;
 }
-.login-page {
-    width: 20%;
-    margin: auto 37%;
-}
 .user-form {
     font-family: Avenir-Next;
     background: #FFFFFF;
     height: 72vh;
     width: 70%;
-    margin: 0 auto 0px;
+    margin: 0 auto 0vh;
     padding: 1%;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    box-shadow: 0 0 2vh 0 rgba(0, 0, 0, 0.2), 0 0.5vh 0.5vh 0 rgba(0, 0, 0, 0.24);
     border-radius: 1%;
 }  
 .foto {
@@ -39,8 +35,11 @@
   color: #7E7E7E;
   padding-left: 5%;
 }
+img{
+  padding-left: 5vh;
+}
 .form2 {
-  padding-left: 43%;
+  padding-left: 33%;
   background: #FFFFFF;
   margin: 1%;
 }
@@ -58,11 +57,8 @@
   border-radius: 1vh;
   height: 5vh;
 }
-.botonGris{
-  width: 100px;
-}
 .botonGris input{
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0vh 1vh 1vh rgba(0, 0, 0, 0.25);
   background-color: #7E7E7E;
   color: #FFFFFF;
   border-radius: 1vh;
@@ -70,11 +66,8 @@
   height: 5vh;
   border: 0ch;
 }
-.botonVerde{
-  width: 100px;
-}
 .botonVerde input{
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0vh 4vh 4vh rgba(0, 0, 0, 0.25);
   background-color: #1e5e36;
   color: #FFFFFF;
   border-radius: 1vh;

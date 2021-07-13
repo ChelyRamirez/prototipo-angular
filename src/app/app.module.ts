@@ -16,6 +16,7 @@ import { HereMapsModule } from 'ng2-heremaps';
 import { ReporteService } from './services/reporte.service';
 import { ClienteService } from './services/cliente.service';
 import { HereMapComponent } from './menu/solicitud/here-map/here-map.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [

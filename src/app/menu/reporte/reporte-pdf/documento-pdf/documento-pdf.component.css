@@ -1,6 +1,31 @@
 .header{
     background: #23283D;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    box-shadow: 0 0 1vh 0 rgba(0, 0, 0, 0.2), 0 1vh 1vh 0 rgba(0, 0, 0, 0.24);
+}
+.but{
+    float: right;
+    padding: 0.5%;
+    background-repeat: no-repeat;
+}
+.container{
+    background-image: linear-gradient();
+}
+.menu-form {
+    position: absolute;
+    top: 20%;
+    width: 15%;
+    font-family: sans-serif;
+    position: relative;
+    background: #FFFFFF;
+    margin: 0 auto 100vh;
+    padding: 60vh;
+    text-align: center;
+    box-shadow: 0 0 20vh 0 rgba(0, 0, 0, 0.2), 0 1vh 1vh 0 rgba(0, 0, 0, 0.24);
+    border-radius: 1%;
+}
+.header{
+    background: #23283D;
+    box-shadow: 0 0 20vh 0 rgba(0, 0, 0, 0.2), 0 1vh 1vh 0 rgba(0, 0, 0, 0.24);
 }
 .but{
     float: right;
@@ -17,32 +42,50 @@
     font-family: sans-serif;
     position: relative;
     background: #FFFFFF;
-    max-width: 200px;
-    margin: 0 auto 100px;
-    padding: 50px;
+    margin: 0 auto 100vh;
+    padding: 5vh;
     text-align: center;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    box-shadow: 0 0 20vh 0 rgba(0, 0, 0, 0.2), 0 1vh 1vh 0 rgba(0, 0, 0, 0.24);
     border-radius: 1%;
 }
 h1{
     font-family: Avenir-Next;
-    font-size: 130%;
+    font-size: 110%;
+}
+H2{
+    font-family: Avenir-Next;
+    font-size: 80%;
 }
 .boton input{
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4vh 4vh rgba(0, 0, 0, 0.25);
     background-color: #23283D;
     color: #FFFFFF;
     border-radius: 1vh;
     width: 30vh;
     height: 5vh;
     border: 0ch;
-}
-body{
+    font-size: 100%;
+    font-weight: 500vh;
+    padding: 0.5em 1.2em;
     position: relative;
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+.boton:hover input{
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.25), 0 0 20px rgba(0, 0, 0, 0.25);
+    background-color: #11C739;
+    color: white;
+    outline-offset: 80px;
+    text-shadow: 1px 1px 6px #fff;
+}
+
+body {
     background-image: linear-gradient(#23283D, transparent), url('../../../../../assets/img/fondoMR.png');
-    background-position: center; 
-    height: 91.4vh;
-    align-items: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    height: 94.2vh;
 }
 @font-face {
     font-family: Avenir-Next;

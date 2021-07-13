@@ -137,6 +137,21 @@ export class AsignacionComponent implements OnInit {
                 this.obtenerEmpleados();
                 this.cita.idCliente = null;
                 this.cita.idEmpleado = null;
+                this.cliente = {
+                  nombrePersona: "Cliente seleccionado",
+                  apPaterno: "",
+                  apMaterno: "",
+                  telefono: '',
+                  empresa: '',
+                  antiguedad: '',
+                  pagoMax: 0
+                }
+                
+                this.empleadose = {
+                  nombre: "Empleado seleccionado",
+                  app: "",
+                  apm: ""
+                }
                 return Swal.fire({
                   icon: 'success',
                   title: '¡CORRECTO!',

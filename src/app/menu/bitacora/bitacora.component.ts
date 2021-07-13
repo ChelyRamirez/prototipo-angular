@@ -8,6 +8,8 @@ import { environment } from '../../../environments/environment';
   styleUrls: ['./bitacora.component.css']
 })
 export class BitacoraComponent implements OnInit {
+
+  filterpost = '';
   public rutaIMG = environment.RUTA_IMAGEN;
   bit: any = [];
   public registros; 
