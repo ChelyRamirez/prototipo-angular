@@ -1,6 +1,6 @@
 .header{
     background: #23283D;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    box-shadow: 0 0 1vh 0 rgba(0, 0, 0, 0.2), 0 1vh 1vh 0 rgba(0, 0, 0, 0.24);
 }
 .but{
     float: right;
@@ -14,22 +14,100 @@
 }
 #tabla1 {
     float: left;
-    width: 50%;
+    width: 100%;
     font-family: Avenir-Next;
     font-size: 100%;
     text-align: left;
-    width: 100%; 
+    overflow-y:scroll;
+    height:73vh; 
+}
+#tabla1::-webkit-scrollbar{
+    width:1.3ex;
+}
+#tabla1::-webkit-scrollbar-thumb{
+    background: #23283D;
+    border-radius: 2vh;
+}
+#tabla1 th{
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 h2{
     font-family: Avenir-Next;
     color: #7E7E7E;
 }
+.input input{ 
+    font-family: Avenir-Next;
+    width: 50vh;
+    height: 5vh;
+    font-size: 100%;
+    color: #7E7E7E;
+    text-align: center;
+    margin-left: 160%;
+    border-radius: 1%;
+    border-collapse: collapse;
+  }
+.input  input:focus {
+    border-color: #23283D;
+    box-shadow: 0 0 0.5vh 0.5vh #23283D;
+  }
+
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 50vh;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    font-family: Avenir-Next;
+  
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: 110%;
+  
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  /* Tooltip arrow */
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+
 #tabla1 table {
     text-align: center;
 }
 
 #tabla1 table tr td {
-    width: 1000px
+    width: 100vh;
 }
 #tabla1 table tr th {
     background-color: #23283D; 
@@ -40,9 +118,9 @@ h2{
 }
 table tr:nth-child(odd) {background-color: #E5E5E5;
     padding: 8%;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1vh solid #fff;
     color: #7E7E7E;    
-    border-top: 1px solid transparent; 
+    border-top: 1vh solid transparent; 
 }
 @font-face {
     font-family: Avenir-Next;

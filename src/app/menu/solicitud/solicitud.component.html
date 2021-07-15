@@ -15,7 +15,7 @@
         <div class="form">
             <form (ngSubmit)="registrar()">
                 <fieldset>
-                    <br><input style="width: 34.5%;" type="text" name="nombre" class="form-input" placeholder="Nombre(s)" required [(ngModel)]='data.nombrePersona' />&nbsp;
+                    <br><span title="Ingresa el nombre del cliente"><input style="width: 34.5%;" type="text" name="nombre" class="form-input" placeholder="Nombre(s)"  required [(ngModel)]='data.nombrePersona' /></span>&nbsp;
                     <input style="width: 31%;" type="text" name="apellidoPaterno" class="form-input" placeholder="Apellido Paterno" required [(ngModel)]='data.apPaterno' />&nbsp;
                     <input style="width: 31%;" type="text" name="apellidoMaterno" class="form-input" placeholder="Apellido Materno" required [(ngModel)]='data.apMaterno' />
                     <input type="text" name="telefono" class="form-input" placeholder="Teléfono" required [(ngModel)]='data.telefono' />
@@ -23,25 +23,33 @@
                     <br><input style="width: 49%;" type="number" name="sueldo" class="form-input" placeholder="Sueldo $" required [(ngModel)]='data.sueldo' />&nbsp;
                     <input style="width: 49%;" type="text" name="monto" class="form-input" placeholder="Monto a pagar $" required [(ngModel)]='data.pagoMax' />
                     <br><input type="text" name="anti" class="form-input" placeholder="Antigüedad en la empresa" required [(ngModel)]='data.antiguedad' />
-                    <br><input type="text" name="estado" class="form-input" placeholder="Estado" required [(ngModel)]='data.estado' />
-                    <br><input type="text" name="ciudad" class="form-input" placeholder="Ciudad" required [(ngModel)]='data.ciudad' />
-                    <br><input type="text" name="colonia" class="form-input" placeholder="Colonia" required [(ngModel)]='data.colonia' />
-                    <br><input type="text" name="calle" class="form-input" placeholder="Calle" required [(ngModel)]='data.calle' />
-                    <br><input type="text" name="cp" class="form-input" placeholder="Código Postal" required [(ngModel)]='data.codigoPostal' />
+                    <br><input type="text" name="estado" disabled class="form-input" placeholder="Estado" required [(ngModel)]='data.estado' />
+                    <br><input type="text" name="ciudad" disables class="form-input" placeholder="Ciudad" required [(ngModel)]='data.ciudad' />
+                    <br><input type="text" name="colonia" disabled class="form-input" placeholder="Colonia" required [(ngModel)]='data.colonia' />
+                    <br><input type="text" name="calle" disabled class="form-input" placeholder="Calle" required [(ngModel)]='data.calle' />
+                    <br><input type="text" name="cp" disabled class="form-input" placeholder="Código Postal" required [(ngModel)]='data.codigoPostal' />
                     <br><input style="width: 49%;" type="text" name="numExt" class="form-input" placeholder="Núm. Ext." required [(ngModel)]='data.numExt' />&nbsp;
                     <input style="width: 49%;" type="text" name="numInt" class="form-input" placeholder="Núm. Int" required [(ngModel)]='data.numInt' />
                     <br><input style="width: 49%;" type="text" name="latitud" class="form-input" placeholder="Latidud" required [(ngModel)]='data.latitud' />&nbsp;
                     <input style="width: 49%;" type="text" name="longitud" class="form-input" placeholder="Longitud" required [(ngModel)]='data.longitud' />
-                    <input class="form-btn" name="submit" type="submit" value="INGRESAR" style="background-color: #23283D;">
+                    <div class="button">
+                        <input name="submit" type="submit" value="GUARDAR" >
+                    </div>
                 </fieldset>
             </form>
         </div>
         <div class="forma">
             <form action="foto-form">
                 <fieldset>
-                    <div #map class="mapa" id="map-container">
-                        <!--Aquí va el mapa-->
+                    <div id="popup">
+                        <p id="popup-coordinate"></p>
+                   
                     </div>
+                    <div #map class="mapa" id="map">
+                        <!--Aquí va el mapa-->
+                        
+                    </div>
+                    <div id="info">No countries selected</div>
                 </fieldset>
                 <br><fieldset class="foto" style="height: 40vh;">
                     <!--Agregar tooltip a todo-->

@@ -3,19 +3,29 @@
         <img [src]="rutaIMG + '/icono2.png'">
         <div class="but">
             <form>
-                <a href="/Prototipo_web/#/menu"><img [src]="rutaIMG + '/menu.png'" /></a>
+                <a href="/Prototipo_web/#/menu"><img [src]="rutaIMG + '/menu.png'" ></a>
             </form>
         </div>
     </div>
 </header>
-
 <body>
     <div class="menu-form">
-        <div>
-            <h3 class="title">GENERA TU REPORTE</h3>
-            <div class="menus"></div>
-            <a href="/Prototipo_web/#/reporteExcel"><img [src]="rutaIMG + '/doc.png'"></a>&nbsp;
-            <a href="/Prototipo_web/#/reportePDF"><img [src]="rutaIMG + '/pdf.png'"></a>
+        <h3 class="title">GENERA TU REPORTE</h3>
+        <div class="menus">
+        <ul class="menu">
+            <li>
+                <a href="/Prototipo_web/#/reporteExcel">
+                    <img [src]="rutaIMG + '/doc.png'">
+                <span><img [src]="rutaIMG + '/doc.png'"></span>
+            </a>
+            </li>&nbsp;&nbsp;
+            <li>
+                <a href="/Prototipo_web/#/reportePDF">
+                    <img [src]="rutaIMG + '/pdf.png'">
+                <span><img [src]="rutaIMG + '/pdf.png'"></span>
+            </a>
+            </li>
+          </ul>
         </div>
     </div>
 </body>

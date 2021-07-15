@@ -10,165 +10,52 @@
 </header>
 
 <body>
-    <h2 class="title">CONSULTA GENERAL</h2>
+    <h2 class="title">CONSULTA GENERAL</h2> 
+    <div class="tooltip">
+        <div class="input">
+            <span class="tooltiptext">Recuerda que la búsqueda debe ser por nombre del cliente</span>
+            <input type="text" class="forms-control" placeholder="BUSCAR" [(ngModel)]="filterpost" name="filterpost"  />
+        </div>
+    </div><br>
     <br>
     <div id="contenedor">
-        <div id="tabla1">
-            <table style="border: solid 0px">
-                <tr>
-                    <th>Nombre</th>
-                    <th>Fecha de alta</th>
-                    <th>Fecha de visita</th>
-                    <th>Crédito autorizado</th>
-                    <th>Monto($)</th>
-                    <th>Visitador</th>
-                    <th>Motivo</th>
-                </tr>
-                <tr>
-                    <td>Araceli Ramírez</td>
-                    <td>26/Junio/2021</td>
-                    <td>28/Junio/2021</td>
-                    <td>Sí</td>
-                    <td>$5,000.00</td>
-                    <td>Dalia Gómez</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Araceli Ramírez</td>
-                    <td>26/Junio/2021</td>
-                    <td>28/Junio/2021</td>
-                    <td>Sí</td>
-                    <td>$5,000.00</td>
-                    <td>Dalia Gómez</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Araceli Ramírez</td>
-                    <td>26/Junio/2021</td>
-                    <td>28/Junio/2021</td>
-                    <td>Sí</td>
-                    <td>$5,000.00</td>
-                    <td>Dalia Gómez</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Araceli Ramírez</td>
-                    <td>26/Junio/2021</td>
-                    <td>28/Junio/2021</td>
-                    <td>Sí</td>
-                    <td>$5,000.00</td>
-                    <td>Dalia Gómez</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Araceli Ramírez</td>
-                    <td>26/Junio/2021</td>
-                    <td>28/Junio/2021</td>
-                    <td>No</td>
-                    <td>$00.00</td>
-                    <td>Dalia Gómez</td>
-                    <td>Se rechazó la visita</td>
-                </tr>
-                <tr>
-                    <td>Araceli Ramírez</td>
-                    <td>26/Junio/2021</td>
-                    <td>28/Junio/2021</td>
-                    <td>No</td>
-                    <td>$5,000.00</td>
-                    <td>Dalia Gómez</td>
-                    <td>No se encontró el domicilio</td>
-                </tr>
-                <tr>
-                    <td>Araceli Ramírez</td>
-                    <td>26/Junio/2021</td>
-                    <td>28/Junio/2021</td>
-                    <td>No</td>
-                    <td>$00.00</td>
-                    <td>Dalia Gómez</td>
-                    <td>El residente no vivía ahí</td>
-                </tr>
-                <tr>
-                    <td>Araceli Ramírez</td>
-                    <td>26/Junio/2021</td>
-                    <td>28/Junio/2021</td>
-                    <td>Sí</td>
-                    <td>$5,000.00</td>
-                    <td>Dalia Gómez</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Araceli Ramírez</td>
-                    <td>26/Junio/2021</td>
-                    <td>28/Junio/2021</td>
-                    <td>Sí</td>
-                    <td>$5,000.00</td>
-                    <td>Dalia Gómez</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Araceli Ramírez</td>
-                    <td>26/Junio/2021</td>
-                    <td>28/Junio/2021</td>
-                    <td>Sí</td>
-                    <td>$5,000.00</td>
-                    <td>Dalia Gómez</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Araceli Ramírez</td>
-                    <td>26/Junio/2021</td>
-                    <td>28/Junio/2021</td>
-                    <td>No</td>
-                    <td>$00.00</td>
-                    <td>Dalia Gómez</td>
-                    <td>Se abandonó la visita</td>
-                </tr>
-                <tr>
-                    <td>Araceli Ramírez</td>
-                    <td>26/Junio/2021</td>
-                    <td>28/Junio/2021</td>
-                    <td>Sí</td>
-                    <td>$5,000.00</td>
-                    <td>Dalia Gómez</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Araceli Ramírez</td>
-                    <td>26/Junio/2021</td>
-                    <td>28/Junio/2021</td>
-                    <td>No</td>
-                    <td>$00.00</td>
-                    <td>Dalia Gómez</td>
-                    <td>Se rechazó la visita</td>
-                </tr>
-                <tr>
-                    <td>Araceli Ramírez</td>
-                    <td>26/Junio/2021</td>
-                    <td>28/Junio/2021</td>
-                    <td>Sí</td>
-                    <td>$5,000.00</td>
-                    <td>Dalia Gómez</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Araceli Ramírez</td>
-                    <td>26/Junio/2021</td>
-                    <td>28/Junio/2021</td>
-                    <td>Sí</td>
-                    <td>$5,000.00</td>
-                    <td>Dalia Gómez</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Araceli Ramírez</td>
-                    <td>26/Junio/2021</td>
-                    <td>28/Junio/2021</td>
-                    <td>Sí</td>
-                    <td>$5,000.00</td>
-                    <td>Dalia Gómez</td>
-                    <td></td>
-                </tr>
-            </table>
-        </div>
+        <fieldset>
+            <div id="tabla1">
+                <table style="border: solid 0px" id="tablaConsulta">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Domicilio</th>
+                            <th>Latitud</th>
+                            <th>Longitud</th>
+                            <th>Antigüedad</th>
+                            <th>Empresa</th>
+                            <th>Fecha de alta</th>
+                            <th>Status visita</th>
+                            <th>Sueldo</th>
+                            <th>Pago máx.</th>
+                            <th>Teléfono</th>
+                            <th>Comentario</th>
+                        </tr>
+                    </thead>
+                    
+                    <tr *ngFor="let cliente of clientes | filter: filterpost" >
+                        
+                        <td>{{cliente.nombrepersona }} {{cliente.appaterno}} {{cliente.apmaterno}}</td>
+                        <td>{{cliente.calle}} {{cliente.numext}} {{cliente.numint}} {{cliente.colonia}} {{cliente.codigopostal}} {{cliente.ciudad}} {{cliente.estado}}</td>
+                        <td>{{cliente.latitud}}</td>
+                        <td>{{cliente.longitud}}</td><td>{{cliente.antiguedad}}</td>
+                        <td>{{cliente.empresa}}</td>
+                        <td>{{cliente.fechaalta}}</td>
+                        <td>{{cliente.estatusvisita}}</td>
+                        <td>{{cliente.sueldo}}</td>
+                        <td>{{cliente.pagomax}}</td>
+                        <td>{{cliente.telefono}}</td>
+                        <td>{{cliente.comentario}}</td>
+                    </tr>
+                </table>
+            </div>
+        </fieldset>
+        
     </div>
 </body>

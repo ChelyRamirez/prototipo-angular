@@ -1,6 +1,5 @@
 .header{
     background: #23283D;
-    
 }
 .but{
     float: right;
@@ -12,39 +11,21 @@
     font-family: Avenir-Next;
     text-align: center;
 }
-.img{
-    position: absolute;
-    top: 25%;
-    left: 3%;
-    height: 50%;
-    width: 50%;
-    background: #FFFFFF;
-    margin: 0 auto 100px;
-    padding: 2%;
-    text-align: center;
-}
 .menu-form {
     position: absolute;
     top: 20%;
     left: 32%;
     height: 40%;
-    width: 50%;
-    background: #FFFFFF;
-    max-width: 30%;
-    margin: 0 auto 100px;
+    width: 30%;
+    margin: 0 auto 100vh;
     padding: 2%;
     text-align: center;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    box-shadow: 0 0 1vh 0 rgba(0, 0, 0, 0.2), 0 1vh 1vh 0 rgba(0, 0, 0, 0.24);
     border-radius: 1%;
-    color: #000000;
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
 }
-h1{
-    font-family: Avenir-Next;
-    font-size: 130%;
-}
 .boton input{
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 1vh 1vh rgba(0, 0, 0, 0.25);
     background-color: #23283D;
     color: #FFFFFF;
     border-radius: 1vh;
@@ -52,18 +33,66 @@ h1{
     height: 5vh;
     border: 0ch;
 }
-body{
-    position: relative;
+body {
     background-image: linear-gradient(#23283D, transparent), url('../../../assets/img/fondoMR.png');
-    background-position: center; 
-    height: 91.4vh;
-    align-items: center;
-  }
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    height: 94.2vh;
+}
+
 .menus a{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-color: #23283D;
+    border-radius: 3%;
 }
 @font-face {
     font-family: Avenir-Next;
     src: url('../../../assets/fonts/AvenirNextLTPro-Regular.otf');
+}
+
+ul {
+    list-style: none;
+}
+.menu {
+    display: flex;
+    align-content: center;
+    padding-left: 8vh;
+}
+.menu a {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    background-color: #FFFFFF;
+}
+.menu a span:last-child {
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+transform: translateY(-100%);
+}
+.menu a:hover span:last-child,
+.menu[data-animation] a:hover span:last-child {
+transform: none;
+}
+.menu a::before {
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 2px;
+background: linear-gradient(to right, #78c8e8, #78c8e8, #23283D);
+z-index: 1;
+transform: scaleX(0);
+transform-origin: left;
+transition: transform 0.5s ease-in-out;
+}
+.menu a:hover::before {
+transform: scaleX(1);
 }
