@@ -50,6 +50,7 @@
 }
 .mapa{
     height: 70vh;
+    width: 100%;
 }
 .fotografia{
     position: absolute;

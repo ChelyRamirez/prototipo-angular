@@ -1,108 +1,226 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Map, View} from 'ol/';
+import Overlay from 'ol/Overlay';
+import VectorLayer from 'ol/layer/Vector';
+import {fromLonLat} from 'ol/proj';
+import {toLonLat} from 'ol/proj';
+
+import {DragBox, Select} from 'ol/interaction';
+import {click, platformModifierKeyOnly, singleClick} from 'ol/events/condition';
+import Layer from 'ol/layer/Layer';
+
+import GeoJSON from 'ol/format/GeoJSON';
+import VectorImageLayer from 'ol/layer/VectorImage';
+import VectorSource from 'ol/source/Vector';
+import Feature from 'ol/feature';
+
+import Icon from 'ol/style/Icon';
+import Tile from "ol/layer/Tile";
+import OSM from 'ol/source/osm';
+import { environment } from '../../../environments/environment';
 import { Cliente } from '../../models/cliente';
 import { GlobalService } from '../../services/global.service';
-import { Router } from '@angular/router';
 import { ClienteService } from '../../services/cliente.service';
 import { Bitacora } from '../../models/bitacora';
 import { User } from '../../models/empleado';
 import Swal from 'sweetalert2';
-declare var H: any;
-import { environment } from '../../../environments/environment';
+import Point from 'ol/geom/Point';
+import Style from 'ol/style/Style';
+import Vector from 'ol/source/Vector';
+import VectorImage from 'ol/layer/VectorImage';
+import CircleStyle from 'ol/style/Circle';
+import Fill from 'ol/style/Fill';
+import Stroke from 'ol/style/Stroke';
+
 @Component({
   selector: 'app-solicitud',
   templateUrl: './solicitud.component.html',
-  styleUrls: ['./solicitud.component.css']
+  styleUrls: ['./solicitud.component.css'],
 })
 export class SolicitudComponent implements OnInit {
-  public imagen:string;
-  private platform: any;
-  private map: any;
-  private defaultLayers: any;
+  
+  log: User = JSON.parse(localStorage.getItem('usuario'));
   public rutaIMG = environment.RUTA_IMAGEN;
+  
+  public imagen: string;
   public longitud: number;
   public latitude: number;
   public markerCl: any;
+  
   data: Cliente = {
-    nombrePersona: "",
-    apPaterno: "",
-    apMaterno: "",
-    fotoINE: "",
-    telefono: "",
+    nombrePersona: '',
+    apPaterno: '',
+    apMaterno: '',
+    fotoINE: '',
+    telefono: '',
     sueldo: null,
-    empresa: "",
-    antiguedad: "",
+    empresa: '',
+    antiguedad: '',
     pagoMax: null,
-    estado: "",
-    ciudad: "",
-    codigoPostal: "",
-    colonia: "",
-    calle: "",
-    numExt: "",
-    numInt: "",
+    estado: '',
+    ciudad: '',
+    codigoPostal: '',
+    colonia: '',
+    calle: '',
+    numExt: '',
+    numInt: '',
     latitud: null,
     longitud: null,
-  }
+  };
+  
   bit: Bitacora = {
     modulo: 'Cliente',
     accion: 'Registro de Cliente',
-    idEmpleado: 0
-  }
-  log: User = JSON.parse(localStorage.getItem('usuario'));
-  puntosLayer: any;  
+    idEmpleado: 0,
+  };
+  
   constructor(
     private cliente: ClienteService,
     private bitacora: GlobalService,
     private router: Router
-  ) {     
-    this.platform = new H.service.Platform({
-      "apikey": "Ib2YJfQW-Ak3OnSVB5943IkDnFavxZKnbv6euTs6Mz8"
-    });
+  ) {
+    
   }
-  ngOnInit(): void {   
-    const divMapCl = document.getElementById("map-container")
-    this.defaultLayers = this.platform.createDefaultLayers();
-    this.map = new H.Map(
-      divMapCl, this.defaultLayers.vector.normal.map,
-      {
-        zoom: 15,
-        center: {lat: 21.1443575, lng: -101.6918062},
-        pixelRatio: window.devicePixelRatio || 1,
+  ngOnInit(): void {
+    this.mapa();
+  }
+  
+  mapa(){
+    const map = new Map({
+      target: 'map',
+      layers: [
+        new Tile({
+          source: new OSM()
+        })
+      ],
+      view: new View({
+        center: fromLonLat([-101.681460,21.128936],'EPSG:4326'),
+        zoom: 11,
+        // maxZoom: 15,
+        // minZoom: 10,
+        projection: 'EPSG:4326'
+      })
+    });
+
+    const popupContainer = document.getElementById('popup-coordinate');
+    const popup = new Overlay({
+      element: popupContainer
+    });
+
+    
+    let capa;
+    //Ciudades Mexico
+    const ciudades = new VectorImageLayer({
+      source: new VectorSource({
+        url: 'http://72.167.220.178:8050/geoserver/telcel/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=telcel%3Acarto_ciudad&maxFeatures=18810&outputFormat=application%2Fjson',
+        format: new GeoJSON()
+      })
+    });
+    map.addLayer(ciudades);
+
+    //Colonias todo mexico
+    // const colonias = new VectorImageLayer({
+    //   source: new VectorSource({
+    //     url: 'http://72.167.220.178:8050/geoserver/telcel/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=telcel%3Acarto_colonia&maxFeatures=100000&outputFormat=application%2Fjson',
+    //     format: new GeoJSON()
+    //   })
+    // });
+
+    //Colonias de Leon
+    // const colonias = new VectorImageLayer({
+    //   source: new VectorSource({
+    //     url: 'http://72.167.220.178:8050/geoserver/prototipo/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=prototipo%3Acolonias_leon&maxFeatures=1000&outputFormat=application%2Fjson',
+    //     format: new GeoJSON()
+    //   })
+    // });
+    // map.addLayer(colonias); 
+    
+    const colonias = new VectorImageLayer({
+      source: new VectorSource({
+        url: 'http://72.167.220.178:8050/geoserver/prototipo/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=prototipo%3Acolonias_leon&maxFeatures=1000&outputFormat=application%2Fjson',
+        format: new GeoJSON()
+      })
+    });
+    map.addLayer(colonias); 
+    
+    //Capa estados
+    const estados = new VectorImageLayer({
+      source: new VectorSource({
+        url: 'http://72.167.220.178:8050/geoserver/telcel/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=telcel%3Acarto_estado&maxFeatures=50&outputFormat=application%2Fjson',
+        format: new GeoJSON()
+      })
+    });
+    estados.setOpacity(0.2);
+    map.addLayer(estados);
+
+
+    map.addOverlay(popup);
+    map.on('singleclick', e => {
+      map.removeLayer(capa);
+      var cor = toLonLat([e.coordinate[0],e.coordinate[1]], 'EPSG:4326');
+      this.data.longitud = cor[0];
+      this.data.latitud = cor[1];
+      let marcador = new Feature({
+        geometry: new Point(
+            [cor[0], cor[1]]// En dónde se va a ubicar
+        ),
+    });
+
+    // Agregamos icono
+    marcador.setStyle(new Style({
+        image: new Icon({
+            src: `${this.rutaIMG}/Vector.png`,
+        })
+    }));
+    
+    // marcadores debe ser un arreglo
+    const marcadores = []; // Arreglo para que se puedan agregar otros más tarde
+    marcadores.push(marcador);// Agregamos el marcador al arreglo
+    
+  
+    capa = new VectorLayer({
+        source: new Vector({
+          features: marcadores, // A la capa le ponemos los marcadores
+        })
+    });
+    //Y agregamos la capa al mapa
+
+    map.addLayer(capa);
+    });
+    var marker
+    const colonia = new Select();
+    map.addInteraction(colonia);
+    map.on('singleclick', function(evt) {
+      if (map.forEachFeatureAtPixel(evt.pixel,
+        function(feature) {
+
+
+
+          console.log(feature);
+          return feature === marker;
+        })
+      ) {
+        alert('click');
       }
-    );
-    this.gestionMarcadores();
-    window.addEventListener('resize', () => this.map.getViewPort().resize());
-    let behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(this.map))
-    let ui = H.ui.UI.createDefault(this.map, this.defaultLayers);    
-    this.encender();
-    }
-    gestionMarcadores(){
-      //var icon = new H.map.Icon('Vector.png');
-      let coords = null; 
-      this.map.addEventListener('tap', (evt) => {
-        coords = this.map.screenToGeo(evt.currentPointer.viewportX, evt.currentPointer.viewportY);
-        console.log(coords);
-        if (this.markerCl != null){
-          this.map.removeObject(this.markerCl);
-        }
-        this.markerCl = new H.map.Marker({ lat: coords.lat, lng: coords.lng });
-        this.map.addObject(this.markerCl);  
-        this.longitud = coords.lng;
-        this.latitude = coords.lat; 
-        console.log(this.markerCl);
-      });
-    }
-     apagar(){
-      //Captura de la webcam
+    });
+
+  }
+
+  ///#Camara web
+  apagar() {
+    //Captura de la webcam
     'use strict';
     const video = document.getElementById('video') as HTMLMediaElement;
     const canvas = document.getElementById('canvas') as HTMLCanvasElement;
-    const snap = document.getElementById("snap");
+    const snap = document.getElementById('snap');
     const errorMsgElement = document.querySelector('span#errorMsg');
     const constraints = {
       audio: false,
-      video:  {
-        width: 0, height: 0
-      }
+      video: {
+        width: 0,
+        height: 0,
+      },
     };
     // Acceso a la webcam
     async function init() {
@@ -115,32 +233,33 @@ export class SolicitudComponent implements OnInit {
     }
     // Success
     function handleSuccess(stream) {
-      window.MSStream = null;
       video.srcObject = null;
     }
     // Load init
     init();
     var context = canvas.getContext('2d');
-    snap.addEventListener("click", () => {
-            var i = video;
-            context.drawImage(i as unknown as HTMLCanvasElement, 0, 0, 500, 250);
-            var dataURL = canvas.toDataURL("image/jpeg", 0.75);
-            this.imagen = dataURL.replace(/^data:image\/jpeg;base64,/, "");
-            this.imagen 
-          });
-     }
-     encender(){
-       //Captura de la webcam
+    snap.addEventListener('click', () => {
+      var i = video;
+      context.drawImage(i as unknown as HTMLCanvasElement, 0, 0, 500, 250);
+      var dataURL = canvas.toDataURL('image/jpeg', 0.75);
+      this.imagen = dataURL.replace(/^data:image\/jpeg;base64,/, '');
+      this.imagen;
+    });
+  }
+
+  encender() {
+    //Captura de la webcam
     'use strict';
     const video = document.getElementById('video') as HTMLMediaElement;
     var canvas = document.getElementById('canvas') as HTMLCanvasElement;
     const errorMsgElement = document.querySelector('span#errorMsg');
-    canvas.width=canvas.width;    
+    canvas.width = canvas.width;
     const constraints = {
       audio: false,
-      video:  {
-        width: 500, height: 250
-      }
+      video: {
+        width: 500,
+        height: 250,
+      },
     };
     // Acceso a la webcam
     async function init() {
@@ -153,81 +272,84 @@ export class SolicitudComponent implements OnInit {
     }
     // Success
     function handleSuccess(stream) {
-      window.MSStream = stream;
       video.srcObject = stream;
     }
     // Load init
-    init();   
-     }      
-  registrar(){
-    if(this.verificar() === 1){
+    init();
+  }
+  ///#endregion
+
+  registrar() {
+    if (this.verificar() === 1) {
       this.data.fotoINE = this.imagen;
       this.cliente.registrarCliente(this.data).subscribe(
-        res => {
-          if( !res.ok ) {
+        (res) => {
+          if (!res.ok) {
             return console.log(res);
           }
           this.bit.idEmpleado = this.log.idEmpleado;
           this.bitacora.registrarBitacora(this.bit).subscribe(
-            res => {
+            (res) => {
               Swal.fire({
                 icon: 'success',
                 title: '¡CORRECTO!',
-                text: 'Se ha guardado la solicitud'
+                text: 'Se ha guardado la solicitud',
               });
-               this.restablecer();   
-               return this.encender();  
+              this.restablecer();
+              return this.encender();
             },
-            err => console.log(err)
-          )
-        },    
-        err => console.log(err)
-        );
+            (err) => console.log(err)
+          );
+        },
+        (err) => console.log(err)
+      );
     }
   }
-  restablecer(){
+
+  restablecer() {
     this.data = {
-      nombrePersona: "",
-      apPaterno: "",
-      apMaterno: "",
-      fotoINE: "",
-      telefono: "",
+      nombrePersona: '',
+      apPaterno: '',
+      apMaterno: '',
+      fotoINE: '',
+      telefono: '',
       sueldo: null,
-      empresa: "",
-      antiguedad: "",
+      empresa: '',
+      antiguedad: '',
       pagoMax: null,
-      estado: "",
-      ciudad: "",
-      codigoPostal: "",
-      colonia: "",
-      calle: "",
-      numExt: "",
-      numInt: "",
+      estado: '',
+      ciudad: '',
+      codigoPostal: '',
+      colonia: '',
+      calle: '',
+      numExt: '',
+      numInt: '',
       latitud: null,
       longitud: null,
-    }
+    };
   }
-  verificar(){
-    if( this.data.nombrePersona !== null ){
-      if(this.data.apPaterno !== null ){
-        if(this.data.telefono !== null){
-          if(this.data.sueldo !== null){
-            if(this.data.empresa !== null){
-              if(this.data.antiguedad !== null){
-                if(this.data.pagoMax !== null){
-                  if(this.data.estado !== null){
-                    if(this.data.ciudad !== null){
-                      if(this.data.codigoPostal !== null){
-                        if(this.data.colonia !== null){
-                          if(this.data.calle !== null){
-                            if(this.data.numExt !== null){
-                              if(this.data.fotoINE !== null){
+  
+  verificar() {
+    if (this.data.nombrePersona !== null) {
+      if (this.data.apPaterno !== null) {
+        if (this.data.telefono !== null) {
+          if (this.data.sueldo !== null) {
+            if (this.data.empresa !== null) {
+              if (this.data.antiguedad !== null) {
+                if (this.data.pagoMax !== null) {
+                  if (this.data.estado !== null) {
+                    if (this.data.ciudad !== null) {
+                      if (this.data.codigoPostal !== null) {
+                        if (this.data.colonia !== null) {
+                          if (this.data.calle !== null) {
+                            if (this.data.numExt !== null) {
+                              if (this.data.fotoINE !== null) {
                                 return 1;
                               } else {
                                 Swal.fire({
                                   icon: 'error',
                                   title: '¡ERROR!',
-                                  text: 'Debe tomar una imagen'
+                                  text: 'Debe tomar una imagen',
                                 });
                                 return 0;
                               }
@@ -235,15 +357,15 @@ export class SolicitudComponent implements OnInit {
                               Swal.fire({
                                 icon: 'error',
                                 title: '¡ERROR!',
-                                text: 'Debe llenar todos los campos'
+                                text: 'Debe llenar todos los campos',
                               });
                               return 0;
                             }
                           } else {
-                             Swal.fire({
+                            Swal.fire({
                               icon: 'error',
                               title: '¡ERROR!',
-                              text: 'Debe llenar todos los campos'
+                              text: 'Debe llenar todos los campos',
                             });
                             return 0;
                           }
@@ -251,7 +373,7 @@ export class SolicitudComponent implements OnInit {
                           Swal.fire({
                             icon: 'error',
                             title: '¡ERROR!',
-                            text: 'Debe llenar todos los campos'
+                            text: 'Debe llenar todos los campos',
                           });
                           return 0;
                         }
@@ -259,7 +381,7 @@ export class SolicitudComponent implements OnInit {
                         Swal.fire({
                           icon: 'error',
                           title: '¡ERROR!',
-                          text: 'Debe llenar todos los campos'
+                          text: 'Debe llenar todos los campos',
                         });
                         return 0;
                       }
@@ -267,7 +389,7 @@ export class SolicitudComponent implements OnInit {
                       Swal.fire({
                         icon: 'error',
                         title: '¡ERROR!',
-                        text: 'Debe llenar todos los campos'
+                        text: 'Debe llenar todos los campos',
                       });
                       return 0;
                     }
@@ -275,7 +397,7 @@ export class SolicitudComponent implements OnInit {
                     Swal.fire({
                       icon: 'error',
                       title: '¡ERROR!',
-                      text: 'Debe llenar todos los campos'
+                      text: 'Debe llenar todos los campos',
                     });
                     return 0;
                   }
@@ -283,7 +405,7 @@ export class SolicitudComponent implements OnInit {
                   Swal.fire({
                     icon: 'error',
                     title: '¡ERROR!',
-                    text: 'Debe llenar todos los campos'
+                    text: 'Debe llenar todos los campos',
                   });
                   return 0;
                 }
@@ -291,7 +413,7 @@ export class SolicitudComponent implements OnInit {
                 Swal.fire({
                   icon: 'error',
                   title: '¡ERROR!',
-                  text: 'Debe llenar todos los campos'
+                  text: 'Debe llenar todos los campos',
                 });
                 return 0;
               }
@@ -299,7 +421,7 @@ export class SolicitudComponent implements OnInit {
               Swal.fire({
                 icon: 'error',
                 title: '¡ERROR!',
-                text: 'Debe llenar todos los campos'
+                text: 'Debe llenar todos los campos',
               });
               return 0;
             }
@@ -307,7 +429,7 @@ export class SolicitudComponent implements OnInit {
             Swal.fire({
               icon: 'error',
               title: '¡ERROR!',
-              text: 'Debe llenar todos los campos'
+              text: 'Debe llenar todos los campos',
             });
             return 0;
           }
@@ -315,15 +437,7 @@ export class SolicitudComponent implements OnInit {
           Swal.fire({
             icon: 'error',
             title: '¡ERROR!',
-            text: 'Debe llenar todos los campos'
-          });
-          return 0;
-        }
-        } else {
-          Swal.fire({
-            icon: 'error',
-            title: '¡ERROR!',
-            text: 'Debe llenar todos los campos'
+            text: 'Debe llenar todos los campos',
           });
           return 0;
         }
@@ -331,9 +445,17 @@ export class SolicitudComponent implements OnInit {
         Swal.fire({
           icon: 'error',
           title: '¡ERROR!',
-          text: 'Debe llenar todos los campos'
+          text: 'Debe llenar todos los campos',
         });
         return 0;
       }
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: '¡ERROR!',
+        text: 'Debe llenar todos los campos',
+      });
+      return 0;
+    }
   }
 }

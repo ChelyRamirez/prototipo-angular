@@ -15,7 +15,6 @@ import { MenuModule } from './menu/menu.module';
 import { HereMapsModule } from 'ng2-heremaps';
 import { ReporteService } from './services/reporte.service';
 import { ClienteService } from './services/cliente.service';
-import { HereMapComponent } from './menu/solicitud/here-map/here-map.component';
 
 @NgModule({
   declarations: [

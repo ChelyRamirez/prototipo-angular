@@ -14,7 +14,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './inicio/menu.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { HereMapComponent } from './solicitud/here-map/here-map.component';
 
 
 
@@ -31,7 +30,6 @@ import { HereMapComponent } from './solicitud/here-map/here-map.component';
     PerfilComponent,
     ReportePDFComponent,
     ReporteExcelComponent,
-    HereMapComponent
   ],
   exports: [],
 
