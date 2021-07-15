@@ -14,6 +14,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './inicio/menu.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from '../app-routing.module';
+import { FilterPipe, FilterPipeB } from '../pipes/filter.pipe';
 
 
 
@@ -30,14 +32,18 @@ import { BrowserModule } from '@angular/platform-browser';
     PerfilComponent,
     ReportePDFComponent,
     ReporteExcelComponent,
+    FilterPipe,
+    FilterPipeB
   ],
   exports: [],
 
   imports: [
     BrowserModule,
     CommonModule,
+    AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    
   ]
 })
 export class MenuModule { }

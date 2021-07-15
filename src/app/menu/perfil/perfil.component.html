@@ -3,7 +3,7 @@
         <img [src]="rutaIMG + '/icono2.png'">
         <div class="but">
             <form action="menu">
-                <a href="Prototipo_web/#/menu"><img [src]="rutaIMG + '/menu.png'"/></a>
+                <a href="/Prototipo_web/#/menu"><img [src]="rutaIMG + '/menu.png'"/></a>
             </form>
         </div>
     </div>
@@ -31,15 +31,14 @@
         <div class="form2">
             <div class="foto">
                 <br>
-                <img [src]="rutaIMG + '/foto.png'" >
-                <br><input type="file" id="foto" name="foto" required>
+                <img [src]="rutaIMG + '/image.png'" >
                 <div class="botonVerde">
-                    <br><input type="button" value="GUARDAR" name="sesion" OnClick="location.href=''">
+                    <br><input type="button" value="GUARDAR" name="sesion" (click)="guardar()">
                 </div>
                 <div class="botonGris">
                     <br><input type="button" value="CERRAR SESIÓN" name="sesion" (click)="logout()">
                 </div>
             </div>
-        </div>        </div>
+        </div>        
+    </div>
 </body>
-

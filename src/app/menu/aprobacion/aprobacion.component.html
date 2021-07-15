@@ -35,15 +35,15 @@
         <div class="form">
             <form action="">
                 <fieldset>
-                    <br><input type="text" name="nombre" disabled class="form-input"  placeholder="Nombre completo" [value]="clientesel.nombre + ' '+ clientesel.app+' '+ clientesel.apm"/>
-                    <br><input type="text" name="domiclio" disabled class="form-input" placeholder="Domicilio" [value]="direccion"/>
-                    <br><input style="width: 48%;" type="text" disabled name="latitud" class="form-input" placeholder="Latidud" [value]="latitud"/>&nbsp;&nbsp;
-                    <input style="width: 48%;" type="text" disabled name="longitud" class="form-input" placeholder="Longitud" [value]="longitud"/>
+                    <br><input style="width: 99.5%;" type="text" name="nombre" disabled class="form-input"  placeholder="Nombre completo" [value]="clientesel.nombre + ' '+ clientesel.app+' '+ clientesel.apm"/>
+                    <br><input style="width: 99.5%;" type="text" name="domiclio" disabled class="form-input" placeholder="Domicilio" [value]="direccion"/>
+                    <br><input style="width: 48.5%;" type="text" disabled name="latitud" class="form-input" placeholder="Latidud" [value]="latitud"/>&nbsp;&nbsp;
+                    <input style="width: 48.5%;" type="text" disabled name="longitud" class="form-input" placeholder="Longitud" [value]="longitud"/>
                     <br><br><label for="credito">¿Se le otorgará el crédito?</label>
                     <input type="radio" name="credito" value="Si" style="width: 50px;" (click)="credito(1)" />Si
                     <input type="radio" name="credito" value="No" style="width: 50px;" (click)="credito(2)">No
                     <br><label for="razon">Comentario del visitante:</label>
-                    <br><textarea name="razon" rows="11" cols="70" disabled [value]="comen"></textarea>
+                    <br><textarea name="razon" rows="12.9" cols="69" disabled [value]="comen"></textarea>
                 </fieldset>
             </form>
         </div>        
@@ -66,7 +66,10 @@
                     <label for="firma">Firma:</label><br>
                     <img [src]="firma" width="500vh" height="150vh" >
                 </div>
-                <br><input type="button" style="font-family: Avenir-Next; background-color: #23283D; color: #fff; width: 200px; height: 30px; border-radius: 5px;" value="GUARDAR" name="guardar" (click)="regCredito()" >
+                <br>
+                <div class="button">
+                    <input name="guardar" type="submit" value="GUARDAR" (click)="regCredito()">
+                </div>
             </form>
         </div>
     </div>

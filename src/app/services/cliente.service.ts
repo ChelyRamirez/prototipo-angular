@@ -21,4 +21,8 @@ export class ClienteService {
     return this.http.get(`${Commons.BASE_URL}obtenerClientes`);
   }
 
+  buscarCliente(data): Observable<any> {
+    return this.http.post(`${Commons.BASE_URL}buscarClientes`, data)
+  }
+
 }

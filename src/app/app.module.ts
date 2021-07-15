@@ -12,7 +12,6 @@ import { DocumentoPDFComponent } from './menu/reporte/reporte-pdf/documento-pdf/
 import { LoginService } from './services/login.service';
 import { GlobalService } from './services/global.service';
 import { MenuModule } from './menu/menu.module';
-import { HereMapsModule } from 'ng2-heremaps';
 import { ReporteService } from './services/reporte.service';
 import { ClienteService } from './services/cliente.service';
 

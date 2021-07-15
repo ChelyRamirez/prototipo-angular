@@ -8,42 +8,46 @@
         </div>
     </div>
 </header>
-<h3 class="title">CREAR USUARIO</h3>
-
 <body>
     <div container>
         <div class="logo-image"></div>
         <div class="form">
+            <h3>CREAR USUARIOS</h3>
             <form (ngSubmit)="guardar()">
-                <fieldset><br>
-                    <input style="width: 32%;" type="text" name="nombre" class="form-input" placeholder="Nombre(s)" required [(ngModel)]='data.nombrePersona' />&nbsp;
+                <fieldset>
+                    <input style="width: 36%;" type="text" name="nombre" class="form-input" placeholder="Nombre(s)" required [(ngModel)]='data.nombrePersona' />&nbsp;
                     <input style="width: 30%;" type="text" name="apellidoPaterno" class="form-input" placeholder="Apellido Paterno" required [(ngModel)]='data.apPaterno' />&nbsp;
                     <input style="width: 30%;" type="text" name="apellidoMaterno" class="form-input" placeholder="Apellido Materno" required [(ngModel)]='data.apMaterno' />
-                    <input type="text" name="username" class="form-input" placeholder="Usuario/Correo Electrónico" required [(ngModel)]='data.username' />
-                    <input type="text" name="password" class="form-input" placeholder="Contraseña" required [(ngModel)]='data.password' />
-                    <input type="text" name="puesto" class="form-input" placeholder="Puesto" required [(ngModel)]='data.puesto' />
-                    <br><input type="text" name="estado" class="form-input" placeholder="Estado" required [(ngModel)]='data.estado' />
-                    <br><input type="text" name="ciudad" class="form-input" placeholder="Ciudad" required [(ngModel)]='data.ciudad' />
-                    <br><input type="text" name="colonia" class="form-input" placeholder="Colonia" required [(ngModel)]='data.colonia' />
-                    <br><input type="text" name="calle" class="form-input" placeholder="Calle" required [(ngModel)]='data.calle' />
-                    <br><input type="text" name="cp" class="form-input" placeholder="Código Postal" required [(ngModel)]='data.codigoPostal' />
-                    <br><input style="width: 47%;" type="text" name="numExt" class="form-input" placeholder="Núm. Ext." required [(ngModel)]='data.numExt' />&nbsp;
-                    <input style="width: 47%;" type="text" name="numInt" class="form-input" placeholder="Núm. Int" required [(ngModel)]='data.numInt' />
-                    <br><input style="width: 47%;" type="text" name="latitud" class="form-input" placeholder="Latidud" required [(ngModel)]='data.latitud' />&nbsp;
-                    <input style="width: 47%;" type="text" name="longitud" class="form-input" placeholder="Longitud" required [(ngModel)]='data.longitud' />
-                    <br><input name="submit" type="submit" class="button" style="background-color: #23283D; padding-top: 1%;" value="CREAR">
+                    <input style="width: 49%;" type="text" name="username" class="form-input" placeholder="Usuario" required [(ngModel)]='data.username' />&nbsp;
+                    <input style="width: 49%;" type="text" name="password" class="form-input" placeholder="Contraseña" required [(ngModel)]='data.password' />
+                    <input style="width: 99%;" type="text" name="puesto" class="form-input" placeholder="Puesto" required [(ngModel)]='data.puesto' />
+                    <br><input style="width: 49%;" type="text" name="estado" class="form-input" placeholder="Estado" required [(ngModel)]='data.estado' />&nbsp;
+                    <input style="width: 49%;" type="text" name="ciudad" class="form-input" placeholder="Ciudad" required [(ngModel)]='data.ciudad' />
+                    <br><input style="width: 49%;" type="text" name="colonia" class="form-input" placeholder="Colonia" required [(ngModel)]='data.colonia' />&nbsp;
+                    <input style="width: 49%;" type="text" name="calle" class="form-input" placeholder="Calle" required [(ngModel)]='data.calle' />
+                    <br><input style="width: 99%;" type="text" name="cp" class="form-input" placeholder="Código Postal" required [(ngModel)]='data.codigoPostal' />
+                    <br><input style="width: 49%;" type="text" name="numExt" class="form-input" placeholder="Núm. Ext." required [(ngModel)]='data.numExt' />&nbsp;
+                    <input style="width: 49%;" type="text" name="numInt" class="form-input" placeholder="Núm. Int" required [(ngModel)]='data.numInt' />
+                    <br><input style="width: 49%;" type="text" name="latitud" class="form-input" placeholder="Latidud" required [(ngModel)]='data.latitud' />&nbsp;
+                    <input style="width: 49%;" type="text" name="longitud" class="form-input" placeholder="Longitud" required [(ngModel)]='data.longitud' />
+                    <div class="button">
+                        <input name="submit" type="submit" value="GUARDAR" >
+                    </div>
                 </fieldset>
             </form>
         </div>
         <div class="forma">
+            <h3>TABLA DE USUARIOS</h3>
             <div id="tabla2">
                 <fieldset>
                     <table>
                         <tr>
-                            <th style="background-color: #23283D; color: #FFF; border-radius: 10px; height: 30px;">Usuarios</th>
+                            <th style="background-color: #23283D; color: #FFF; border-radius: 10px;">ID</th>
+                            <th style="background-color: #23283D; color: #FFF; border-radius: 10px;">Usuarios</th>
                             <th style="background-color: #23283D; color: #FFF; border-radius: 10px;">Tipo</th>
                         </tr>
                         <tr *ngFor = "let empleado of empleados">
+                            <td style="height:40px;">{{empleado.idempleado}}</td>
                             <td style="height:40px;">{{empleado.nombrepersona}}</td>
                             <td>{{empleado.puesto}}</td>
                             <tr>
