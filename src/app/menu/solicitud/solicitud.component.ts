@@ -6,18 +6,23 @@ import VectorLayer from 'ol/layer/Vector';
 import {fromLonLat} from 'ol/proj';
 import {toLonLat} from 'ol/proj';
 
-import {DragBox, Select} from 'ol/interaction';
+import {Select} from 'ol/interaction';
 import {click, platformModifierKeyOnly, singleClick} from 'ol/events/condition';
 import Layer from 'ol/layer/Layer';
-
 import GeoJSON from 'ol/format/GeoJSON';
+import Image from 'ol/layer/Image';
+import ImageWMS from 'ol/source/ImageWMS';
 import VectorImageLayer from 'ol/layer/VectorImage';
 import VectorSource from 'ol/source/Vector';
 import Feature from 'ol/feature';
-
 import Icon from 'ol/style/Icon';
 import Tile from "ol/layer/Tile";
 import OSM from 'ol/source/osm';
+import Point from 'ol/geom/Point';
+import Style from 'ol/style/Style';
+import Vector from 'ol/source/Vector';
+
+
 import { environment } from '../../../environments/environment';
 import { Cliente } from '../../models/cliente';
 import { GlobalService } from '../../services/global.service';
@@ -25,13 +30,6 @@ import { ClienteService } from '../../services/cliente.service';
 import { Bitacora } from '../../models/bitacora';
 import { User } from '../../models/empleado';
 import Swal from 'sweetalert2';
-import Point from 'ol/geom/Point';
-import Style from 'ol/style/Style';
-import Vector from 'ol/source/Vector';
-import VectorImage from 'ol/layer/VectorImage';
-import CircleStyle from 'ol/style/Circle';
-import Fill from 'ol/style/Fill';
-import Stroke from 'ol/style/Stroke';
 
 @Component({
   selector: 'app-solicitud',
@@ -111,13 +109,13 @@ export class SolicitudComponent implements OnInit {
     
     let capa;
     //Ciudades Mexico
-    const ciudades = new VectorImageLayer({
-      source: new VectorSource({
-        url: 'http://72.167.220.178:8050/geoserver/telcel/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=telcel%3Acarto_ciudad&maxFeatures=18810&outputFormat=application%2Fjson',
-        format: new GeoJSON()
-      })
-    });
-    map.addLayer(ciudades);
+    // const ciudades = new VectorImageLayer({
+    //   source: new VectorSource({
+    //     url: 'http://72.167.220.178:8050/geoserver/telcel/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=telcel%3Acarto_ciudad&maxFeatures=18810&outputFormat=application%2Fjson',
+    //     format: new GeoJSON()
+    //   })
+    // });
+    // map.addLayer(ciudades);
 
     //Colonias todo mexico
     // const colonias = new VectorImageLayer({
@@ -127,32 +125,61 @@ export class SolicitudComponent implements OnInit {
     //   })
     // });
 
-    //Colonias de Leon
+    //Vector de las colonias de Leon 
     // const colonias = new VectorImageLayer({
     //   source: new VectorSource({
     //     url: 'http://72.167.220.178:8050/geoserver/prototipo/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=prototipo%3Acolonias_leon&maxFeatures=1000&outputFormat=application%2Fjson',
     //     format: new GeoJSON()
     //   })
     // });
-    // map.addLayer(colonias); 
-    
-    const colonias = new VectorImageLayer({
-      source: new VectorSource({
-        url: 'http://72.167.220.178:8050/geoserver/prototipo/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=prototipo%3Acolonias_leon&maxFeatures=1000&outputFormat=application%2Fjson',
-        format: new GeoJSON()
+    var cqlfilter = 'id_colonia IN (17708)';
+    var colonias: any = new Image({
+      source: new ImageWMS({
+          url: 'http://72.167.220.178:8050/geoserver/prototipo/wms?service=WMS',
+          params: {
+              'LAYERS': 'prototipo:colonias_leon'
+          },
+          serverType: 'geoserver'
       })
     });
+    colonias.setOpacity(0.3);
     map.addLayer(colonias); 
+
+    //Capa imagen Ciudades
+    var ciudad: any = new Image({
+      source: new ImageWMS({
+          url: 'http://72.167.220.178:8050/geoserver/telcel/wms?',
+          params: {
+              'LAYERS': 'telcel:carto_ciudad'
+          },
+          serverType: 'geoserver'
+      })
+    });
+    ciudad.setOpacity(0.2);
+    map.addLayer(ciudad); 
+
+    //Capa imagen Estados
+    // var estados = new Image({
+    //   source: new ImageWMS({
+    //       url: 'http://72.167.220.178:8050/geoserver/telcel/wms?',
+    //       params: {
+    //           'LAYERS': 'telcel:carto_estado'
+    //       },
+    //       serverType: 'geoserver'
+    //   })
+    // });
+    // estados.setOpacity(0.3);
+    // map.addLayer(estados); 
     
     //Capa estados
-    const estados = new VectorImageLayer({
-      source: new VectorSource({
-        url: 'http://72.167.220.178:8050/geoserver/telcel/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=telcel%3Acarto_estado&maxFeatures=50&outputFormat=application%2Fjson',
-        format: new GeoJSON()
-      })
-    });
-    estados.setOpacity(0.2);
-    map.addLayer(estados);
+    // const estados = new VectorImageLayer({
+    //   source: new VectorSource({
+    //     url: 'http://72.167.220.178:8050/geoserver/telcel/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=telcel%3Acarto_estado&maxFeatures=50&outputFormat=application%2Fjson',
+    //     format: new GeoJSON()
+    //   })
+    // });
+    // estados.setOpacity(0.2);
+    // map.addLayer(estados);
 
 
     map.addOverlay(popup);
@@ -185,25 +212,29 @@ export class SolicitudComponent implements OnInit {
         })
     });
     //Y agregamos la capa al mapa
-
     map.addLayer(capa);
+
+    var view = map.getView();
+    var url = colonias.getSource().getFeatureInfoUrl(e.coordinate, view.getResolution(), view.getProjection(), 
+    {'INFO_FORMAT': 'application/json'}) || [];
+    console.log(url);
+
+    var urlc = ciudad.getSource().getFeatureInfoUrl(e.coordinate, view.getResolution(), view.getProjection(), 
+    {'INFO_FORMAT': 'application/json'});
+    console.log(urlc);
     });
-    var marker
-    const colonia = new Select();
-    map.addInteraction(colonia);
-    map.on('singleclick', function(evt) {
-      if (map.forEachFeatureAtPixel(evt.pixel,
-        function(feature) {
-
-
-
-          console.log(feature);
-          return feature === marker;
-        })
-      ) {
-        alert('click');
-      }
-    });
+    //Obtencion de datos click de las diferentes capas
+    // var marker
+    // const colonia = new Select();
+    // map.addInteraction(colonia);
+    // map.on('singleclick', function(evt) {
+    //   map.forEachFeatureAtPixel(evt.pixel,
+    //     function(feature) {
+          
+    //       console.log(feature);
+    //       return feature === marker;
+    //     });
+    // });
 
   }
 
