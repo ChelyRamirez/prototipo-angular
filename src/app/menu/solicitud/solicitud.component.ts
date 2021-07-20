@@ -181,13 +181,22 @@ export class SolicitudComponent implements OnInit {
     // estados.setOpacity(0.2);
     // map.addLayer(estados);
 
-
+    let datosColonia;
     map.addOverlay(popup);
-    map.on('singleclick', e => {
+    map.on('singleclick',async e => {
       map.removeLayer(capa);
       var cor = toLonLat([e.coordinate[0],e.coordinate[1]], 'EPSG:4326');
       this.data.longitud = cor[0];
       this.data.latitud = cor[1];
+      
+      map.setView(new View({
+        center: fromLonLat([cor[0],cor[1]],'EPSG:4326'),
+        zoom: 15,
+        // maxZoom: 15,
+        // minZoom: 10,
+        projection: 'EPSG:4326'
+      }))
+
       let marcador = new Feature({
         geometry: new Point(
             [cor[0], cor[1]]// En dónde se va a ubicar
@@ -218,23 +227,26 @@ export class SolicitudComponent implements OnInit {
     var url = colonias.getSource().getFeatureInfoUrl(e.coordinate, view.getResolution(), view.getProjection(), 
     {'INFO_FORMAT': 'application/json'}) || [];
     console.log(url);
+    
+    await fetch(url)
+    .then( function(response) {
+        // Si todo sale bien en la promesa se devuelve el json de la respuesta
+         return response.json();
+    })
+    .then( function(colonia) {
+        datosColonia =  colonia.features[0].properties;
+        console.log(datosColonia);
 
-    var urlc = ciudad.getSource().getFeatureInfoUrl(e.coordinate, view.getResolution(), view.getProjection(), 
-    {'INFO_FORMAT': 'application/json'});
-    console.log(urlc);
+        // si existe myJson.players.list se agregan al contenedor los elementos de list
     });
-    //Obtencion de datos click de las diferentes capas
-    // var marker
-    // const colonia = new Select();
-    // map.addInteraction(colonia);
-    // map.on('singleclick', function(evt) {
-    //   map.forEachFeatureAtPixel(evt.pixel,
-    //     function(feature) {
-          
-    //       console.log(feature);
-    //       return feature === marker;
-    //     });
-    // });
+    console.log(this.data)
+    this.data.estado = datosColonia.estado;
+    this.data.ciudad = datosColonia.municipio;
+    this.data.colonia = datosColonia.colonia;
+
+    });
+    console.log(datosColonia);
+    
 
   }
 
