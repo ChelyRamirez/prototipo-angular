@@ -25,6 +25,7 @@
     "@types/heremaps": "^3.1.4",
     "angular-sweetalert-2": "^1.0.1",
     "ng2-heremaps": "^0.2.5",
+    "ngx-socket-io": "^4.1.0",
     "ol": "^6.5.0",
     "rxjs": "~6.6.0",
     "sweetalert": "^2.1.2",

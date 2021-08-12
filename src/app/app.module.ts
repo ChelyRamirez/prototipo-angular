@@ -15,6 +15,11 @@ import { MenuModule } from './menu/menu.module';
 import { ReporteService } from './services/reporte.service';
 import { ClienteService } from './services/cliente.service';
 
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+const config: SocketIoConfig = { url: 'http://localhost:8988', options: {} };
+
+
+
 @NgModule({
   declarations: [
     AppComponent,

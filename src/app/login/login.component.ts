@@ -57,6 +57,7 @@ export class LoginComponent implements OnInit {
           this.bitacora.registrarBitacora(this.bit).subscribe(
             res => {
               localStorage.setItem('usuario', JSON.stringify(this.log));
+              sessionStorage.setItem('usuario', JSON.stringify(this.log));
               return this.router.navigate(['/menu']);
             },
             err => {

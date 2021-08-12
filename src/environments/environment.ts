@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  RUTA_IMAGEN: "./../../assets/img"
+  RUTA_IMAGEN: "./../../assets/img",
 };
 
 /*

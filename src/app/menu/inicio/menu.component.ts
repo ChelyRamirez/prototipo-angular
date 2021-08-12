@@ -30,6 +30,16 @@ export class MenuComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    this.cerrar();
+    window.onbeforeunload = e => {
+      if(!sessionStorage.getItem('usuario')){
+        console.log("se petateo");
+        
+        return "Alerta nativa del navegador";
+      }
+      console.log(e);
+      return "Alerta nativa del navegador";
+    }
   }
 
   logout() {
@@ -50,4 +60,8 @@ export class MenuComponent implements OnInit {
       err => console.log(err)
     )
   }
+
+  cerrar(){
+    }
+
 }

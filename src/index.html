@@ -8,12 +8,25 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Prototipo</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script language="JavaScript" type="text/javascript">
+
+  window.onbeforeunload = function (e) {
+      if(!sessionStorage.getItem('usuario')){
+        console.log("se petateo");
+        
+        return "Alerta nativa del navegador";
+      }
+      console.log(e);
+      return "Alerta nativa del navegador"; 
+  }
+</script>
 </head>
 <body>
   <app-root></app-root>
   
   <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
   <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+  
 
 </body>
 </html>

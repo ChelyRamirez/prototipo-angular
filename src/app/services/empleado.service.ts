@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Commons } from '../models/commons';
-
+import {} from 'ngx-socket-io'
 
 
 @Injectable({
@@ -35,6 +35,20 @@ export class EmpleadoService {
 
   registrarEmpleado(data): Observable<any> {
     return this.http.post(`${Commons.BASE_URL}agregarEmpleado`,data);
+  }
+
+  detet(): Observable<any> { 
+    let s:any = window.onbeforeunload = e => {
+      if(!sessionStorage.getItem('usuario')){
+        console.log("se petateo");
+        s = false;
+        return "Alerta nativa del navegador";
+      }
+      console.log(e);
+      s = true
+      return "Alerta nativa del navegador";
+    }
+    return s;
   }
 
 }
